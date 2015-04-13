@@ -1,0 +1,91 @@
+
+var cnips = __CN_IPS__;
+
+var directDomains = __DIRECT_DOMAINS__;
+
+var domains = __DOMAINS__;
+
+var proxy = __PROXY__;
+
+var direct = 'DIRECT;';
+
+var hasOwnProperty = Object.hasOwnProperty;
+
+function convertAddress(ipchars) {
+    var bytes = ipchars.split('.');
+    var result = ((bytes[0] & 0xff) << 24) |
+                 ((bytes[1] & 0xff) << 16) |
+                 ((bytes[2] & 0xff) <<  8) |
+                  (bytes[3] & 0xff);
+    return result;
+}
+
+function match(ip) {
+    var left = 0, right = cnips.length;
+    do {
+        var mid = Math.floor((left + right) / 2),
+            ipf = (ip & cnips[mid][1]) >>> 0,
+            m   = (cnips[mid][0] & cnips[mid][1]) >>> 0;
+        if (ipf == m) {
+            return true;
+        } else if (ipf > m) {
+            left  = mid + 1;
+        } else {
+            right = mid;
+        }
+    } while (left + 1 <= right)
+    return false;
+}
+
+function testDomain(target, domains, cnRootIncluded) {
+    var idxA = target.lastIndexOf('.');
+    var idxB = target.lastIndexOf('.', idxA - 1);
+    var hasOwnProperty = Object.hasOwnProperty;
+    var suffix = cnRootIncluded ? target.substring(idxA + 1) : '';
+    if (suffix === 'cn') {
+        return true;
+    }
+    while (true) {
+        if (idxB === -1) {
+            if (hasOwnProperty.call(domains, target)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        suffix = target.substring(idxB + 1);
+        if (hasOwnProperty.call(domains, suffix)) {
+            return true;
+        }
+        idxB = target.lastIndexOf('.', idxB - 1);
+    }
+}
+
+function FindProxyForURL(url, host) {
+    if (isPlainHostName(host)
+     || host === '127.0.0.1'
+     || host === 'localhost') {
+        return direct;
+    }
+
+    if (testDomain(host, directDomains, true)) {
+        return direct
+    }
+
+    if (testDomain(host, domains)) {
+        return proxy;
+    }
+
+    var strIp = dnsResolve(host);
+ 
+    if (!strIp) {
+        return proxy;
+    }
+
+    var intIp = convertAddress(strIp);
+    if (match(intIp)) {
+        return direct;
+    }
+
+    return proxy;
+}
