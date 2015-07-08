@@ -801,19 +801,49 @@ var cnips = [
     22
   ], 
   [
+    762511360, 
+    4294901760, 
+    22
+  ], 
+  [
+    762576896, 
+    4294901760, 
+    22
+  ], 
+  [
+    762642432, 
+    4294901760, 
+    22
+  ], 
+  [
+    762773504, 
+    4294901760, 
+    22
+  ], 
+  [
+    762839040, 
+    4294901760, 
+    22
+  ], 
+  [
+    762904576, 
+    4294901760, 
+    22
+  ], 
+  [
+    762970112, 
+    4294901760, 
+    22
+  ], 
+  [
     794558464, 
     4294705152, 
     14
   ], 
   [
     794820608, 
-    4293918720, 
-    12
-  ], 
-  [
-    795869184, 
-    4294901760, 
-    16
+    4292870144, 
+    11
   ], 
   [
     822345728, 
@@ -2252,6 +2282,46 @@ var cnips = [
   ], 
   [
     1731592192, 
+    4294901760, 
+    22
+  ], 
+  [
+    1731657728, 
+    4294901760, 
+    22
+  ], 
+  [
+    1731723264, 
+    4294901760, 
+    22
+  ], 
+  [
+    1731788800, 
+    4294901760, 
+    22
+  ], 
+  [
+    1731854336, 
+    4294901760, 
+    22
+  ], 
+  [
+    1731919872, 
+    4294901760, 
+    22
+  ], 
+  [
+    1731985408, 
+    4294901760, 
+    22
+  ], 
+  [
+    1732050944, 
+    4294901760, 
+    22
+  ], 
+  [
+    1732116480, 
     4294901760, 
     22
   ], 
@@ -3893,7 +3963,7 @@ var cnips = [
   [
     1991770112, 
     4294901760, 
-    16
+    17
   ], 
   [
     1991901184, 
@@ -5904,6 +5974,11 @@ var cnips = [
     2814181376, 
     4294901760, 
     16
+  ], 
+  [
+    2816212992, 
+    4294901760, 
+    22
   ], 
   [
     2829058048, 
@@ -9233,6 +9308,7 @@ var directDomains = {
   "gaopeng.com": 1, 
   "geekpark.net": 1, 
   "gfan.com": 1, 
+  "git.ck": 1, 
   "gtimg.com": 1, 
   "hacdn.net": 1, 
   "hadns.net": 1, 
@@ -9292,6 +9368,7 @@ var directDomains = {
   "loli.vg": 1, 
   "lvping.com": 1, 
   "lxdns.com": 1, 
+  "mail.chukong-inc.com": 1, 
   "mangocity.com": 1, 
   "mapbar.com": 1, 
   "mcbbs.net": 1, 
@@ -9351,6 +9428,7 @@ var directDomains = {
   "rrimg.com": 1, 
   "sanguosha.com": 1, 
   "sdo.com": 1, 
+  "share.ck": 1, 
   "sina.com": 1, 
   "sinaapp.com": 1, 
   "sinaedge.com": 1, 
@@ -9494,13 +9572,14 @@ var domains = {
   "50webs.com": 1, 
   "51.ca": 1, 
   "5i01.com": 1, 
+  "5isotoi5.org": 1, 
   "5maodang.com": 1, 
   "64tianwang.com": 1, 
   "64wiki.com": 1, 
   "666kb.com": 1, 
   "6park.com": 1, 
-  "6v6dota.com": 1, 
   "7capture.com": 1, 
+  "85st.com": 1, 
   "881903.com": 1, 
   "888.com": 1, 
   "89-64.org": 1, 
@@ -9538,6 +9617,7 @@ var domains = {
   "alabout.com": 1, 
   "alasbarricadas.org": 1, 
   "alexlur.org": 1, 
+  "alien-ufos.com": 1, 
   "aliengu.com": 1, 
   "alkasir.com": 1, 
   "all-that-is-interesting.com": 1, 
@@ -9607,6 +9687,7 @@ var domains = {
   "astrill.com": 1, 
   "atc.org.au": 1, 
   "atchinese.com": 1, 
+  "atdmt.com": 1, 
   "atebits.com": 1, 
   "atgfw.org": 1, 
   "atlaspost.com": 1, 
@@ -9635,6 +9716,7 @@ var domains = {
   "basetimesheightdividedby2.com": 1, 
   "bayvoice.net": 1, 
   "baywords.com": 1, 
+  "bbc.co": 1, 
   "bbc.in": 1, 
   "bbcchinese.com": 1, 
   "bbg.gov": 1, 
@@ -9723,6 +9805,7 @@ var domains = {
   "brucewang.net": 1, 
   "bt95.com": 1, 
   "btdigg.org": 1, 
+  "btspread.com": 1, 
   "budaedu.org": 1, 
   "bugclub.org": 1, 
   "bullog.org": 1, 
@@ -9742,6 +9825,9 @@ var domains = {
   "cafepress.com": 1, 
   "calameo.com": 1, 
   "calebelston.com": 1, 
+  "cam4.com": 1, 
+  "cam4.jp": 1, 
+  "cam4.sg": 1, 
   "cams.com": 1, 
   "cams.org.sg": 1, 
   "canadameet.com": 1, 
@@ -9755,6 +9841,7 @@ var domains = {
   "catch22.net": 1, 
   "catfightpayperview.xxx": 1, 
   "cattt.com": 1, 
+  "cbc.ca": 1, 
   "cbsnews.com": 1, 
   "ccavtop10.com": 1, 
   "ccdtr.org": 1, 
@@ -9766,6 +9853,7 @@ var domains = {
   "ccue.com": 1, 
   "cdig.info": 1, 
   "cdjp.org": 1, 
+  "cdninstagram.com": 1, 
   "cdp1998.org": 1, 
   "cdp2006.org": 1, 
   "cdpusa.org": 1, 
@@ -9833,7 +9921,6 @@ var domains = {
   "chinese-memorial.org": 1, 
   "chinesedailynews.com": 1, 
   "chinesen.de": 1, 
-  "chinesenewsnet.com": 1, 
   "chinesepen.org": 1, 
   "chinesetalks.net": 1, 
   "chingcheong.com": 1, 
@@ -9861,6 +9948,7 @@ var domains = {
   "clientsfromhell.net": 1, 
   "clipfish.de": 1, 
   "cloudfront.net": 1, 
+  "club1069.com": 1, 
   "cmoinc.org": 1, 
   "cms.gov": 1, 
   "cnd.org": 1, 
@@ -9874,6 +9962,7 @@ var domains = {
   "code1984.com": 1, 
   "codeboxapp.com": 1, 
   "codeshare.io": 1, 
+  "codeskulptor.org": 1, 
   "collateralmurder.com": 1, 
   "collateralmurder.org": 1, 
   "com.uk": 1, 
@@ -9885,6 +9974,7 @@ var domains = {
   "contactmagazine.net": 1, 
   "convio.net": 1, 
   "cookingtothegoodlife.com": 1, 
+  "cool18.com": 1, 
   "coolaler.com": 1, 
   "coolder.com": 1, 
   "corumcollege.com": 1, 
@@ -9925,6 +10015,7 @@ var domains = {
   "dalailama.ru": 1, 
   "dalailamaworld.com": 1, 
   "dalianmeng.org": 1, 
+  "daliulian.org": 1, 
   "danke4china.net": 1, 
   "danwei.org": 1, 
   "daolan.net": 1, 
@@ -9970,6 +10061,7 @@ var domains = {
   "djangosnippets.org": 1, 
   "dl-laby.jp": 1, 
   "dlsite.com": 1, 
+  "dlsite.jp": 1, 
   "dmcdn.net": 1, 
   "dns2go.com": 1, 
   "dnscrypt.org": 1, 
@@ -9986,7 +10078,6 @@ var domains = {
   "dongyangjing.com": 1, 
   "dontfilter.us": 1, 
   "dontmovetochina.com": 1, 
-  "dotheyfolloweachother.com": 1, 
   "dotplane.com": 1, 
   "dotsub.com": 1, 
   "doubleaf.com": 1, 
@@ -10019,6 +10110,7 @@ var domains = {
   "dvorak.org": 1, 
   "dw-world.com": 1, 
   "dw-world.de": 1, 
+  "dw.com": 1, 
   "dw.de": 1, 
   "dwheeler.com": 1, 
   "dwnews.com": 1, 
@@ -10035,6 +10127,7 @@ var domains = {
   "eamonnbrennan.com": 1, 
   "eastturkestan.com": 1, 
   "eastturkistan-gov.org": 1, 
+  "eastturkistan.net": 1, 
   "eastturkistangovernmentinexile.us": 1, 
   "ebookbrowse.com": 1, 
   "ebookee.com": 1, 
@@ -10078,6 +10171,7 @@ var domains = {
   "erepublik.com": 1, 
   "erights.net": 1, 
   "eriversoft.com": 1, 
+  "erktv.com": 1, 
   "ernestmandel.org": 1, 
   "etaa.org.au": 1, 
   "etaiwannews.com": 1, 
@@ -10137,6 +10231,7 @@ var domains = {
   "fc2.com": 1, 
   "fc2blog.net": 1, 
   "fc2china.com": 1, 
+  "fc2web.com": 1, 
   "fdbox.com": 1, 
   "fdc89.jp": 1, 
   "feedburner.com": 1, 
@@ -10216,6 +10311,7 @@ var domains = {
   "freeyoutubeproxy.net": 1, 
   "friendfeed-media.com": 1, 
   "friendfeed.com": 1, 
+  "friendfinder.com": 1, 
   "fring.com": 1, 
   "fringenetwork.com": 1, 
   "frommel.net": 1, 
@@ -10280,7 +10376,7 @@ var domains = {
   "getlantern.org": 1, 
   "getsmartlinks.com": 1, 
   "getsocialscope.com": 1, 
-  "getyouram.com": 1, 
+  "getuploader.com": 1, 
   "gfw.org.ua": 1, 
   "ggpht.com": 1, 
   "ggssl.com": 1, 
@@ -10307,6 +10403,8 @@ var domains = {
   "gmail.com": 1, 
   "gmbd.cn": 1, 
   "gmhz.org": 1, 
+  "gmiddle.com": 1, 
+  "gmiddle.net": 1, 
   "gmodules.com": 1, 
   "goagent.biz": 1, 
   "goagentplus.com": 1, 
@@ -10331,6 +10429,7 @@ var domains = {
   "googleapis.com": 1, 
   "googleartproject.com": 1, 
   "googlecode.com": 1, 
+  "googlecommerce.com": 1, 
   "googledomains.com": 1, 
   "googledrive.com": 1, 
   "googleearth.com": 1, 
@@ -10345,12 +10444,14 @@ var domains = {
   "googlesyndication.com": 1, 
   "googleusercontent.com": 1, 
   "googlevideo.com": 1, 
+  "googlezip.net": 1, 
   "gopetition.com": 1, 
   "gospelherald.com": 1, 
   "gotw.ca": 1, 
   "gowalla.com": 1, 
   "gradconnection.com": 1, 
   "grandtrial.org": 1, 
+  "grangorz.org": 1, 
   "graphis.ne.jp": 1, 
   "gravatar.com": 1, 
   "graylog2.org": 1, 
@@ -10374,7 +10475,9 @@ var domains = {
   "gunsamerica.com": 1, 
   "guomin.us": 1, 
   "gutteruncensored.com": 1, 
+  "gvlib.com": 1, 
   "gvt0.com": 1, 
+  "gvt1.com": 1, 
   "gyalwarinpoche.com": 1, 
   "gzm.tv": 1, 
   "gzone-anime.info": 1, 
@@ -10383,8 +10486,11 @@ var domains = {
   "hacken.cc": 1, 
   "hackthatphone.net": 1, 
   "hahlo.com": 1, 
+  "hanminzu.org": 1, 
   "hanunyi.com": 1, 
+  "hao123.com": 1, 
   "hardsextube.com": 1, 
+  "harunyahya.com": 1, 
   "hasaowall.com": 1, 
   "have8.com": 1, 
   "hdtvb.net": 1, 
@@ -10457,6 +10563,7 @@ var domains = {
   "hougaige.com": 1, 
   "howtoforge.com": 1, 
   "hqcdp.org": 1, 
+  "hrcchina.org": 1, 
   "hrcir.com": 1, 
   "hrichina.org": 1, 
   "hrw.org": 1, 
@@ -10615,7 +10722,6 @@ var domains = {
   "junauza.com": 1, 
   "junefourth-20.net": 1, 
   "justfreevpn.com": 1, 
-  "justin.tv": 1, 
   "justtristan.com": 1, 
   "juziyue.com": 1, 
   "jwmusic.org": 1, 
@@ -10649,6 +10755,7 @@ var domains = {
   "koornk.com": 1, 
   "kui.name": 1, 
   "kun.im": 1, 
+  "kurashsultan.com": 1, 
   "kurtmunger.com": 1, 
   "kusocity.com": 1, 
   "kwcg.ca": 1, 
@@ -10765,6 +10872,7 @@ var domains = {
   "matainja.com": 1, 
   "mathiew-badimon.com": 1, 
   "matsushimakaede.com": 1, 
+  "maturejp.com": 1, 
   "maxgif.com": 1, 
   "mayimayi.com": 1, 
   "mcadforums.com": 1, 
@@ -10927,7 +11035,6 @@ var domains = {
   "newspeak.cc": 1, 
   "newstapa.org": 1, 
   "newyorktimes.com": 1, 
-  "nextmedia.com": 1, 
   "nexton-net.jp": 1, 
   "nf.id.au": 1, 
   "nga.mil": 1, 
@@ -10954,12 +11061,14 @@ var domains = {
   "npa.go.jp": 1, 
   "nps.gov": 1, 
   "nrk.no": 1, 
+  "ntd.tv": 1, 
   "ntdtv.ca": 1, 
   "ntdtv.co": 1, 
   "ntdtv.org": 1, 
   "ntdtv.ru": 1, 
   "nuexpo.com": 1, 
   "nurgo-software.com": 1, 
+  "nuuvem.com": 1, 
   "nuvid.com": 1, 
   "nuzcom.com": 1, 
   "nvquan.org": 1, 
@@ -11107,6 +11216,7 @@ var domains = {
   "porn.com": 1, 
   "porn2.com": 1, 
   "pornbase.org": 1, 
+  "pornhd.com": 1, 
   "pornhub.com": 1, 
   "pornmm.net": 1, 
   "pornoxo.com": 1, 
@@ -11114,6 +11224,7 @@ var domains = {
   "pornstarclub.com": 1, 
   "porntube.com": 1, 
   "pornvisit.com": 1, 
+  "portablevpn.nl": 1, 
   "pose.com": 1, 
   "post.ly": 1, 
   "post852.com": 1, 
@@ -11128,6 +11239,7 @@ var domains = {
   "presentationzen.com": 1, 
   "prestige-av.com": 1, 
   "printfriendly.com": 1, 
+  "pritunl.com": 1, 
   "privacybox.de": 1, 
   "privateinternetaccess.com": 1, 
   "privatepaste.com": 1, 
@@ -11153,13 +11265,13 @@ var domains = {
   "purepdf.com": 1, 
   "purevpn.com": 1, 
   "putlocker.com": 1, 
+  "putty.org": 1, 
   "pwned.com": 1, 
   "python.com": 1, 
   "qanote.com": 1, 
   "qi-gong.me": 1, 
   "qidian.ca": 1, 
   "qienkuen.org": 1, 
-  "qiporn.com": 1, 
   "qiwen.lu": 1, 
   "qixianglu.cn": 1, 
   "qkshare.com": 1, 
@@ -11168,12 +11280,13 @@ var domains = {
   "qstatus.com": 1, 
   "qtrac.eu": 1, 
   "qtweeter.com": 1, 
-  "quadedge.com": 1, 
+  "quran.com": 1, 
   "qusi8.net": 1, 
   "qvodzy.org": 1, 
   "qx.net": 1, 
   "qxbbs.org": 1, 
   "radicalparty.org": 1, 
+  "radiko.jp": 1, 
   "radioaustralia.net.au": 1, 
   "radiotime.com": 1, 
   "radiovaticana.org": 1, 
@@ -11223,12 +11336,14 @@ var domains = {
   "rnw.nl": 1, 
   "robtex.com": 1, 
   "robustnessiskey.com": 1, 
+  "rocketbbs.com": 1, 
   "rockmelt.com": 1, 
   "rocmp.org": 1, 
   "rojo.com": 1, 
   "romanandreg.com": 1, 
   "ronjoneswriter.com": 1, 
   "roodo.com": 1, 
+  "rosechina.net": 1, 
   "rotten.com": 1, 
   "rsf-chinese.org": 1, 
   "rsf.org": 1, 
@@ -11239,6 +11354,7 @@ var domains = {
   "rutube.ru": 1, 
   "ruyiseek.com": 1, 
   "rxhj.net": 1, 
+  "s-cute.com": 1, 
   "s-dragon.org": 1, 
   "s1heng.com": 1, 
   "s4miniarchive.com": 1, 
@@ -11321,6 +11437,7 @@ var domains = {
   "simplecd.org": 1, 
   "simpleproductivityblog.com": 1, 
   "sina.com": 1, 
+  "sinchew.com.my": 1, 
   "singtao.ca": 1, 
   "singtao.com": 1, 
   "sino-monthly.com": 1, 
@@ -11417,6 +11534,7 @@ var domains = {
   "state168.com": 1, 
   "staticflickr.com": 1, 
   "steel-storm.com": 1, 
+  "stepmania.com": 1, 
   "sthoo.com": 1, 
   "stickam.com": 1, 
   "stickeraction.com": 1, 
@@ -11439,6 +11557,8 @@ var domains = {
   "suoluo.org": 1, 
   "supertweet.net": 1, 
   "surfeasy.com.au": 1, 
+  "surrenderat20.net": 1, 
+  "suyangg.com": 1, 
   "svwind.com": 1, 
   "sweux.com": 1, 
   "swift-tools.net": 1, 
@@ -11514,6 +11634,7 @@ var domains = {
   "theinternetwishlist.com": 1, 
   "thelifeyoucansave.com": 1, 
   "thelius.org": 1, 
+  "thenewslens.com": 1, 
   "thepiratebay.org": 1, 
   "theqii.info": 1, 
   "thereallove.kr": 1, 
@@ -11675,6 +11796,7 @@ var domains = {
   "twipple.jp": 1, 
   "twistar.cc": 1, 
   "twister.net.co": 1, 
+  "twisterio.com": 1, 
   "twisternow.com": 1, 
   "twistory.net": 1, 
   "twit2d.com": 1, 
@@ -11687,7 +11809,6 @@ var domains = {
   "twitoaster.com": 1, 
   "twitonmsn.com": 1, 
   "twitpic.com": 1, 
-  "twitreferral.com": 1, 
   "twitstat.com": 1, 
   "twittbot.net": 1, 
   "twitter.com": 1, 
@@ -11726,6 +11847,7 @@ var domains = {
   "ufreevpn.com": 1, 
   "ugo.com": 1, 
   "uhrp.org": 1, 
+  "uighur.nl": 1, 
   "uighurbiz.net": 1, 
   "uk.to": 1, 
   "ulike.net": 1, 
@@ -11770,19 +11892,15 @@ var domains = {
   "uyghuramerican.org": 1, 
   "uyghurcanadiansociety.org": 1, 
   "uyghurcongress.org": 1, 
+  "uyghurpen.org": 1, 
   "uygur.org": 1, 
   "uymaarip.com": 1, 
   "v-state.org": 1, 
-  "v2ex.com": 1, 
-  "v70.us": 1, 
-  "v7976888.info": 1, 
   "vaayoo.com": 1, 
-  "value-domain.com": 1, 
   "van698.com": 1, 
   "vanemu.cn": 1, 
   "vanilla-jp.com": 1, 
   "vansky.com": 1, 
-  "vapurl.com": 1, 
   "vatn.org": 1, 
   "vcf-online.org": 1, 
   "vcfbuilder.org": 1, 
@@ -11826,9 +11944,12 @@ var domains = {
   "vpngate.net": 1, 
   "vpnpop.com": 1, 
   "vpnpronet.com": 1, 
+  "vpnreviewz.com": 1, 
+  "vs.com": 1, 
   "vtunnel.com": 1, 
   "w.org": 1, 
   "w3.org": 1, 
+  "w3schools.com": 1, 
   "waffle1999.com": 1, 
   "wahas.com": 1, 
   "waigaobu.com": 1, 
@@ -11861,6 +11982,7 @@ var domains = {
   "webs-tv.net": 1, 
   "webshots.com": 1, 
   "websitepulse.com": 1, 
+  "websnapr.com": 1, 
   "webworkerdaily.com": 1, 
   "weeewooo.net": 1, 
   "weekmag.info": 1, 
@@ -11912,7 +12034,6 @@ var domains = {
   "wikimedia.org.mo": 1, 
   "wikinews.org": 1, 
   "wikipedia.org": 1, 
-  "wikisource.org": 1, 
   "wikiwiki.jp": 1, 
   "williamhill.com": 1, 
   "willw.net": 1, 
@@ -11979,6 +12100,7 @@ var domains = {
   "xiaochuncnjp.com": 1, 
   "xiaod.in": 1, 
   "xiaohexie.com": 1, 
+  "xiaolan.me": 1, 
   "xiaoma.org": 1, 
   "xiezhua.com": 1, 
   "xing.com": 1, 
@@ -11986,8 +12108,10 @@ var domains = {
   "xinsheng.net": 1, 
   "xinshijue.com": 1, 
   "xinyubbs.net": 1, 
+  "xiongpian.com": 1, 
   "xizang-zhiye.org": 1, 
   "xjp.cc": 1, 
+  "xlfmwz.info": 1, 
   "xml-training-guide.com": 1, 
   "xmovies.com": 1, 
   "xmusic.fm": 1, 
@@ -12030,12 +12154,6 @@ var domains = {
   "yogichen.org": 1, 
   "yong.hu": 1, 
   "yorkbbs.ca": 1, 
-  "youb11.com": 1, 
-  "youb66.com": 1, 
-  "youb77.com": 1, 
-  "youb88.com": 1, 
-  "youb99.com": 1, 
-  "youbma.com": 1, 
   "youjizz.com": 1, 
   "youmaker.com": 1, 
   "youpai.org": 1, 
@@ -12110,6 +12228,8 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
+var ipRegExp = new RegExp(/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/);
+
 function convertAddress(ipchars) {
     var bytes = ipchars.split('.');
     var result = ((bytes[0] & 0xff) << 24) |
@@ -12167,21 +12287,25 @@ function FindProxyForURL(url, host) {
         return direct;
     }
 
-    if (testDomain(host, directDomains, true)) {
-        return direct
+    if (!ipRegExp.test(host)) {
+        if (testDomain(host, directDomains, true)) {
+            return direct
+        }
+
+        if (testDomain(host, domains)) {
+            return proxy;
+        }
+        strIp = dnsResolve(host);
+    } else {
+        strIp = host
     }
 
-    if (testDomain(host, domains)) {
-        return proxy;
-    }
-
-    var strIp = dnsResolve(host);
- 
     if (!strIp) {
         return proxy;
     }
+    
+    intIp = convertAddress(strIp);
 
-    var intIp = convertAddress(strIp);
     if (match(intIp)) {
         return direct;
     }

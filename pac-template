@@ -11,6 +11,8 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
+var ipRegExp = new RegExp(/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/);
+
 function convertAddress(ipchars) {
     var bytes = ipchars.split('.');
     var result = ((bytes[0] & 0xff) << 24) |
@@ -68,21 +70,25 @@ function FindProxyForURL(url, host) {
         return direct;
     }
 
-    if (testDomain(host, directDomains, true)) {
-        return direct
+    if (!ipRegExp.test(host)) {
+        if (testDomain(host, directDomains, true)) {
+            return direct
+        }
+
+        if (testDomain(host, domains)) {
+            return proxy;
+        }
+        strIp = dnsResolve(host);
+    } else {
+        strIp = host
     }
 
-    if (testDomain(host, domains)) {
-        return proxy;
-    }
-
-    var strIp = dnsResolve(host);
- 
     if (!strIp) {
         return proxy;
     }
+    
+    intIp = convertAddress(strIp);
 
-    var intIp = convertAddress(strIp);
     if (match(intIp)) {
         return direct;
     }
