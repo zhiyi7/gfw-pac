@@ -12,7 +12,7 @@ import logging
 import urllib2
 from argparse import ArgumentParser
 
-gfwlist_url = 'https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt'
+gfwlist_url = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt'
 
 
 def parse_args():
