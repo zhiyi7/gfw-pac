@@ -270,7 +270,9 @@ def main():
             # Yeah, it's an URL, try to download it
             print 'Downloading user rules file from %s' % args.user_rule
             direct_rule = urllib2.urlopen(args.direct_rule, timeout=10).read()
-    direct_rule = direct_rule.splitlines(False)
+        direct_rule = direct_rule.splitlines(False)
+    else:
+        direct_rule = []
 
     cnips = fetch_ip_data()
 
