@@ -30,6 +30,8 @@ def parse_args():
                              ' gfwlist')
     parser.add_argument('--direct-rule', dest='direct_rule',
                         help='user rule file, contains domains not bypass proxy')
+    parser.add_argument('--localtld-rule', dest='localtld_rule',
+                        help='local TLD rule file, contains TLDs with a leading dot not bypass proxy')
     parser.add_argument('--ip-file', dest='ip_file',
                         help='delegated-apnic-latest from apnic.net')
     return parser.parse_args()
@@ -192,7 +194,7 @@ def reduce_domains(domains):
     return uni_domains
 
 
-def generate_pac_fast(domains, proxy, direct_domains, cnips):
+def generate_pac_fast(domains, proxy, direct_domains, cnips, local_tlds):
     # render the pac file
     with open('./pac-template', 'rb') as f:
         proxy_content = f.read()
@@ -216,6 +218,14 @@ def generate_pac_fast(domains, proxy, direct_domains, cnips):
     proxy_content = proxy_content.replace(
         '__CN_IPS__',
         json.dumps(cnips, indent=2, sort_keys=False)
+    )
+
+    tlds_dict = {}
+    for domain in local_tlds:
+        tlds_dict[domain] = 1
+    proxy_content = proxy_content.replace(
+        '__LOCAL_TLDS__',
+        json.dumps(tlds_dict, indent=2, sort_keys=True)
     )
 
     return proxy_content
@@ -243,6 +253,7 @@ def main():
     args = parse_args()
     user_rule = None
     direct_rule = None
+    localtld_rule = None
     if (args.input):
         with open(args.input, 'rb') as f:
             content = f.read()
@@ -274,6 +285,20 @@ def main():
     else:
         direct_rule = []
 
+    if args.localtld_rule:
+        tldrule_parts = urlparse.urlsplit(args.localtld_rule)
+        if not tldrule_parts.scheme or not tldrule_parts.netloc:
+            # It's not an URL, deal it as local file
+            with open(args.localtld_rule, 'rb') as f:
+                localtld_rule = f.read()
+        else:
+            # Yeah, it's an URL, try to download it
+            print 'Downloading local tlds rules file from %s' % args.user_rule
+            localtld_rule = urllib2.urlopen(args.localtld_rule, timeout=10).read()
+        localtld_rule = localtld_rule.splitlines(False)
+    else:
+        localtld_rule = []
+
     cnips = fetch_ip_data()
 
     content = decode_gfwlist(content)
@@ -281,7 +306,7 @@ def main():
 
     domains = parse_gfwlist(gfwlist)
     domains = reduce_domains(domains)
-    pac_content = generate_pac_fast(domains, args.proxy, direct_rule, cnips)
+    pac_content = generate_pac_fast(domains, args.proxy, direct_rule, cnips, localtld_rule)
 
     with open(args.output, 'wb') as f:
         f.write(pac_content)

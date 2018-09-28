@@ -11,9 +11,6 @@ wikipedia.org
 stackoverflow.com
 sstatic.net
 imgur.com
-github.com
-githubusercontent.com
-github.io
 googlecode.com
 docker.io
 docker.com
@@ -44,12 +41,3 @@ last.fm
 scdn.co
 spotify.com
 spotilocal.com
-music.126.net
-laravel.com
-youbma.com
-youb99.com
-youb88.com
-youb77.com
-youb66.com
-youb11.com
-qiporn.com

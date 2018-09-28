@@ -1,13 +1,14 @@
+var proxy = __PROXY__;
+
+var direct = 'DIRECT;';
 
 var cnips = __CN_IPS__;
 
 var directDomains = __DIRECT_DOMAINS__;
 
-var domains = __DOMAINS__;
+var domainsUsingProxy = __DOMAINS__;
 
-var proxy = __PROXY__;
-
-var direct = 'DIRECT;';
+var localTlds = __LOCAL_TLDS__;
 
 var hasOwnProperty = Object.hasOwnProperty;
 
@@ -63,9 +64,32 @@ function testDomain(target, domains, cnRootIncluded) {
     }
 }
 
+function isLocalTestDomain(domain) {
+    // Chrome uses .test as testing gTLD.
+    var tld = domain.substring(domain.lastIndexOf('.'));
+    if (tld === domain) {
+        return false;
+    }
+    return Object.hasOwnProperty.call(localTlds, tld);
+}
+
+/* https://github.com/frenchbread/private-ip */
+function isPrivateIp(ip) {
+  return /^(::f{4}:)?10\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+  /^(::f{4}:)?192\.168\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+  /^(::f{4}:)?172\.(1[6-9]|2\d|30|31)\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+  /^(::f{4}:)?127\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+  /^(::f{4}:)?169\.254\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+  /^f[cd][0-9a-f]{2}:/i.test(ip) ||
+  /^fe80:/i.test(ip) ||
+  /^::1$/.test(ip) ||
+  /^::$/.test(ip);
+}
+
 function FindProxyForURL(url, host) {
     if (isPlainHostName(host)
-     || host === '127.0.0.1'
+     || isPrivateIp(host)
+     || isLocalTestDomain(host)
      || host === 'localhost') {
         return direct;
     }
@@ -75,7 +99,7 @@ function FindProxyForURL(url, host) {
             return direct
         }
 
-        if (testDomain(host, domains)) {
+        if (testDomain(host, domainsUsingProxy)) {
             return proxy;
         }
         strIp = dnsResolve(host);

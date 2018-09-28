@@ -366,3 +366,6 @@ zhihu.com
 zhimg.com
 zhubajie.com
 zongheng.com
+github.com
+githubusercontent.com
+github.io
