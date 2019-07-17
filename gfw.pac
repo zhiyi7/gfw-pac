@@ -1,4 +1,4 @@
-var proxy = "PROXY 192.168.2.1:10080; DIRECT";
+var proxy = "SOCKS5 10.0.0.1:8080; PROXY 10.0.0.1:3128; DIRECT";
 
 var direct = 'DIRECT;';
 
@@ -10401,8 +10401,6 @@ var directDomains = {
   "gaopeng.com": 1, 
   "geekpark.net": 1, 
   "gfan.com": 1, 
-  "github.com": 1, 
-  "github.io": 1, 
   "githubusercontent.com": 1, 
   "gtimg.com": 1, 
   "hacdn.net": 1, 
@@ -10421,6 +10419,7 @@ var directDomains = {
   "hupu.com": 1, 
   "iask.com": 1, 
   "iciba.com": 1, 
+  "icloud.com": 1, 
   "idqqimg.com": 1, 
   "ifanr.com": 1, 
   "ifeng.com": 1, 
@@ -10525,6 +10524,7 @@ var directDomains = {
   "sina.com": 1, 
   "sinaapp.com": 1, 
   "sinaedge.com": 1, 
+  "sinaimg.cn": 1, 
   "sinaimg.com": 1, 
   "sinajs.com": 1, 
   "skycn.com": 1, 
