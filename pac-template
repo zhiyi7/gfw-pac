@@ -95,12 +95,12 @@ function FindProxyForURL(url, host) {
     }
 
     if (!ipRegExp.test(host)) {
-        if (testDomain(host, directDomains, true)) {
-            return direct
-        }
-
         if (testDomain(host, domainsUsingProxy)) {
             return proxy;
+        }
+        
+        if (testDomain(host, directDomains, true)) {
+            return direct
         }
         strIp = dnsResolve(host);
     } else {

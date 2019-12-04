@@ -309,11 +309,6 @@ var cnips = [
     21
   ], 
   [
-    461045760, 
-    4294901760, 
-    22
-  ], 
-  [
     461373440, 
     4294836224, 
     15
@@ -2009,9 +2004,14 @@ var cnips = [
     12
   ], 
   [
-    1696595968, 
-    4294705152, 
-    14
+    1696661504, 
+    4294901760, 
+    17
+  ], 
+  [
+    1696727040, 
+    4294836224, 
+    15
   ], 
   [
     1696858112, 
@@ -2030,8 +2030,18 @@ var cnips = [
   ], 
   [
     1697120256, 
-    4294443008, 
-    13
+    4294836224, 
+    15
+  ], 
+  [
+    1697251328, 
+    4294836224, 
+    15
+  ], 
+  [
+    1697382400, 
+    4294705152, 
+    14
   ], 
   [
     1697644544, 
@@ -2165,8 +2175,18 @@ var cnips = [
   ], 
   [
     1707343872, 
-    4294705152, 
-    14
+    4294901760, 
+    16
+  ], 
+  [
+    1707409408, 
+    4294901760, 
+    16
+  ], 
+  [
+    1707474944, 
+    4294836224, 
+    15
   ], 
   [
     1707606016, 
@@ -2844,9 +2864,109 @@ var cnips = [
     22
   ], 
   [
+    1736179712, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736245248, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736310784, 
+    4294901760, 
+    22
+  ], 
+  [
     1736507392, 
     4294901760, 
     22
+  ], 
+  [
+    1736572928, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736638464, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736704000, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736769536, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736835072, 
+    4294901760, 
+    24
+  ], 
+  [
+    1736900608, 
+    4294901760, 
+    22
+  ], 
+  [
+    1736966144, 
+    4294901760, 
+    22
+  ], 
+  [
+    1737031680, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737097216, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737162752, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737228288, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737293824, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737359360, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737424896, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737490432, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737555968, 
+    4294901760, 
+    23
+  ], 
+  [
+    1737621504, 
+    4294901760, 
+    23
   ], 
   [
     1740636160, 
@@ -3195,8 +3315,13 @@ var cnips = [
   ], 
   [
     1779171328, 
-    4294705152, 
-    14
+    4294836224, 
+    15
+  ], 
+  [
+    1779302400, 
+    4294836224, 
+    15
   ], 
   [
     1779433472, 
@@ -4170,8 +4295,18 @@ var cnips = [
   ], 
   [
     1941176320, 
-    4294705152, 
-    14
+    4294836224, 
+    15
+  ], 
+  [
+    1941307392, 
+    4294901760, 
+    16
+  ], 
+  [
+    1941372928, 
+    4294901760, 
+    16
   ], 
   [
     1941635072, 
@@ -4485,8 +4620,18 @@ var cnips = [
   ], 
   [
     1966080000, 
-    4294705152, 
-    14
+    4294901760, 
+    17
+  ], 
+  [
+    1966145536, 
+    4294901760, 
+    16
+  ], 
+  [
+    1966211072, 
+    4294836224, 
+    15
   ], 
   [
     1966407680, 
@@ -4756,7 +4901,7 @@ var cnips = [
   [
     1992359936, 
     4294901760, 
-    20
+    21
   ], 
   [
     1992425472, 
@@ -4852,11 +4997,6 @@ var cnips = [
     1996750848, 
     4294705152, 
     14
-  ], 
-  [
-    1997012992, 
-    4294901760, 
-    16
   ], 
   [
     1997144064, 
@@ -5545,8 +5685,23 @@ var cnips = [
   ], 
   [
     2054160384, 
-    4294705152, 
-    14
+    4294901760, 
+    18
+  ], 
+  [
+    2054225920, 
+    4294901760, 
+    16
+  ], 
+  [
+    2054291456, 
+    4294901760, 
+    16
+  ], 
+  [
+    2054356992, 
+    4294901760, 
+    17
   ], 
   [
     2054619136, 
@@ -5867,6 +6022,11 @@ var cnips = [
     2079916032, 
     4294901760, 
     16
+  ], 
+  [
+    2080178176, 
+    4294901760, 
+    22
   ], 
   [
     2080243712, 
@@ -7449,9 +7609,19 @@ var cnips = [
     10
   ], 
   [
+    3117088768, 
+    4294901760, 
+    22
+  ], 
+  [
     3162701824, 
     4294901760, 
     17
+  ], 
+  [
+    3224567808, 
+    4294901760, 
+    24
   ], 
   [
     3224829952, 
@@ -7484,6 +7654,11 @@ var cnips = [
     0
   ], 
   [
+    3234136064, 
+    4294901760, 
+    24
+  ], 
+  [
     3245342720, 
     4294901760, 
     16
@@ -7492,6 +7667,11 @@ var cnips = [
     3333357568, 
     4294901760, 
     22
+  ], 
+  [
+    3352559616, 
+    4294901760, 
+    24
   ], 
   [
     3388997632, 
@@ -8719,14 +8899,14 @@ var cnips = [
     22
   ], 
   [
-    3420323840, 
+    3420389376, 
     4294901760, 
     20
   ], 
   [
-    3420389376, 
+    3425959936, 
     4294901760, 
-    20
+    24
   ], 
   [
     3523346432, 
@@ -9077,11 +9257,6 @@ var cnips = [
     3565223936, 
     4294901760, 
     17
-  ], 
-  [
-    3640262656, 
-    4294901760, 
-    22
   ], 
   [
     3657433088, 
@@ -10309,6 +10484,7 @@ var directDomains = {
   "aliyuncs.com": 1, 
   "anzhi.com": 1, 
   "appinn.com": 1, 
+  "apple.cn": 1, 
   "apple.com": 1, 
   "appsina.com": 1, 
   "archlinuxcn.org": 1, 
@@ -10671,6 +10847,7 @@ var domainsUsingProxy = {
   "2008xianzhang.info": 1, 
   "2017.hk": 1, 
   "21andy.com": 1, 
+  "21join.com": 1, 
   "21pron.com": 1, 
   "21sextury.com": 1, 
   "228.net.tw": 1, 
@@ -10693,6 +10870,7 @@ var domainsUsingProxy = {
   "3proxy.ru": 1, 
   "3ren.ca": 1, 
   "3tui.net": 1, 
+  "43110.cf": 1, 
   "466453.com": 1, 
   "4bluestones.biz": 1, 
   "4chan.com": 1, 
@@ -10708,6 +10886,7 @@ var domainsUsingProxy = {
   "51jav.org": 1, 
   "51luoben.com": 1, 
   "5278.cc": 1, 
+  "5299.tv": 1, 
   "5aimiku.com": 1, 
   "5i01.com": 1, 
   "5isotoi5.org": 1, 
@@ -10720,6 +10899,7 @@ var domainsUsingProxy = {
   "666kb.com": 1, 
   "6park.com": 1, 
   "6parker.com": 1, 
+  "6parknews.com": 1, 
   "7capture.com": 1, 
   "7cow.com": 1, 
   "8-d.com": 1, 
@@ -10742,6 +10922,7 @@ var domainsUsingProxy = {
   "99cn.info": 1, 
   "9bis.com": 1, 
   "9bis.net": 1, 
+  "9gag.com": 1, 
   "a-normal-day.com": 1, 
   "a5.com.ru": 1, 
   "aamacau.com": 1, 
@@ -10751,6 +10932,7 @@ var domainsUsingProxy = {
   "abc.xyz": 1, 
   "abchinese.com": 1, 
   "abclite.net": 1, 
+  "abebooks.com": 1, 
   "ablwang.com": 1, 
   "aboluowang.com": 1, 
   "aboutgfw.com": 1, 
@@ -10781,6 +10963,7 @@ var domainsUsingProxy = {
   "advertfan.com": 1, 
   "ae.org": 1, 
   "aenhancers.com": 1, 
+  "aex.com": 1, 
   "af.mil": 1, 
   "afantibbs.com": 1, 
   "agnesb.fr": 1, 
@@ -10846,6 +11029,7 @@ var domainsUsingProxy = {
   "amazon.com": 1, 
   "amazonaws.com": 1, 
   "ameblo.jp": 1, 
+  "america.gov": 1, 
   "american.edu": 1, 
   "americangreencard.com": 1, 
   "americanunfinished.com": 1, 
@@ -10868,8 +11052,11 @@ var domainsUsingProxy = {
   "android.com": 1, 
   "androidify.com": 1, 
   "androidplus.co": 1, 
+  "androidtv.com": 1, 
   "andygod.com": 1, 
+  "angela-merkel.de": 1, 
   "angelfire.com": 1, 
+  "angola.org": 1, 
   "angularjs.org": 1, 
   "animecrazy.net": 1, 
   "animeshippuuden.com": 1, 
@@ -10880,6 +11067,7 @@ var domainsUsingProxy = {
   "anonymise.us": 1, 
   "anonymitynetwork.com": 1, 
   "anonymizer.com": 1, 
+  "anonymouse.org": 1, 
   "anpopo.com": 1, 
   "answering-islam.org": 1, 
   "antd.org": 1, 
@@ -10935,10 +11123,11 @@ var domainsUsingProxy = {
   "arlingtoncemetery.mil": 1, 
   "army.mil": 1, 
   "art4tibet1998.org": 1, 
+  "arte.tv": 1, 
   "artofpeacefoundation.org": 1, 
+  "artstation.com": 1, 
   "artsy.net": 1, 
   "asacp.org": 1, 
-  "asahichinese.com": 1, 
   "asdfg.jp": 1, 
   "asg.to": 1, 
   "asia-gaming.com": 1, 
@@ -10978,6 +11167,7 @@ var domainsUsingProxy = {
   "avdb.in": 1, 
   "avdb.tv": 1, 
   "avfantasy.com": 1, 
+  "avg.com": 1, 
   "avgle.com": 1, 
   "avidemux.org": 1, 
   "avmo.pw": 1, 
@@ -11005,6 +11195,7 @@ var domainsUsingProxy = {
   "baixing.me": 1, 
   "bakgeekhome.tk": 1, 
   "banana-vpn.com": 1, 
+  "band.us": 1, 
   "bandwagonhost.com": 1, 
   "bangbrosnetwork.com": 1, 
   "bangchen.net": 1, 
@@ -11015,6 +11206,7 @@ var domainsUsingProxy = {
   "banorte.com": 1, 
   "baramangaonline.com": 1, 
   "barenakedislam.com": 1, 
+  "barton.de": 1, 
   "bartvpn.com": 1, 
   "bash-hackers.org": 1, 
   "bastillepost.com": 1, 
@@ -11044,6 +11236,7 @@ var domainsUsingProxy = {
   "bebo.com": 1, 
   "beeg.com": 1, 
   "beevpn.com": 1, 
+  "behance.net": 1, 
   "behindkink.com": 1, 
   "beijing1989.com": 1, 
   "beijingspring.com": 1, 
@@ -11097,10 +11290,12 @@ var domainsUsingProxy = {
   "bitcointalk.org": 1, 
   "bitcoinworld.com": 1, 
   "bitfinex.com": 1, 
+  "bithumb.com": 1, 
   "bitinka.com.ar": 1, 
   "bitmex.com": 1, 
   "bitshare.com": 1, 
   "bitsnoop.com": 1, 
+  "bitterwinter.org": 1, 
   "bitvise.com": 1, 
   "bizhat.com": 1, 
   "bjnewlife.org": 1, 
@@ -11142,6 +11337,7 @@ var domainsUsingProxy = {
   "blueangellive.com": 1, 
   "bmfinn.com": 1, 
   "bnews.co": 1, 
+  "bnn.co": 1, 
   "bnrmetal.com": 1, 
   "boardreader.com": 1, 
   "bod.asia": 1, 
@@ -11195,6 +11391,7 @@ var domainsUsingProxy = {
   "bt95.com": 1, 
   "btaia.com": 1, 
   "btbtav.com": 1, 
+  "btc98.com": 1, 
   "btctrade.im": 1, 
   "btdigg.org": 1, 
   "btku.me": 1, 
@@ -11211,6 +11408,7 @@ var domainsUsingProxy = {
   "busayari.com": 1, 
   "businessinsider.com": 1, 
   "businessinsider.com.au": 1, 
+  "businesstoday.com.tw": 1, 
   "businessweek.com": 1, 
   "busu.org": 1, 
   "busytrade.com": 1, 
@@ -11219,6 +11417,9 @@ var domainsUsingProxy = {
   "buzzhand.net": 1, 
   "buzzorange.com": 1, 
   "bvpn.com": 1, 
+  "bwbx.io": 1, 
+  "bwgyhw.com": 1, 
+  "bwh1.net": 1, 
   "bwsj.hk": 1, 
   "bx.in.th": 1, 
   "bx.tl": 1, 
@@ -11287,6 +11488,7 @@ var domainsUsingProxy = {
   "cclife.org": 1, 
   "cclifefl.org": 1, 
   "ccthere.com": 1, 
+  "ccthere.net": 1, 
   "cctmweb.net": 1, 
   "cctongbao.com": 1, 
   "ccue.ca": 1, 
@@ -11378,6 +11580,7 @@ var domainsUsingProxy = {
   "chinalawtranslate.com": 1, 
   "chinamule.com": 1, 
   "chinamz.org": 1, 
+  "chinanewscenter.com": 1, 
   "chinapost.com.tw": 1, 
   "chinapress.com.my": 1, 
   "chinarightsia.org": 1, 
@@ -11465,6 +11668,7 @@ var domainsUsingProxy = {
   "cloakpoint.com": 1, 
   "cloudfront.net": 1, 
   "club1069.com": 1, 
+  "clyp.it": 1, 
   "cmcn.org": 1, 
   "cmi.org.tw": 1, 
   "cmoinc.org": 1, 
@@ -11489,6 +11693,7 @@ var domainsUsingProxy = {
   "co.tv": 1, 
   "co.uk": 1, 
   "coat.co.jp": 1, 
+  "cobinhood.com": 1, 
   "cochina.co": 1, 
   "cochina.org": 1, 
   "code1984.com": 1, 
@@ -11496,10 +11701,12 @@ var domainsUsingProxy = {
   "codeshare.io": 1, 
   "codeskulptor.org": 1, 
   "coin2co.in": 1, 
+  "coinbene.com": 1, 
   "coinegg.com": 1, 
   "coinex.com": 1, 
   "coingi.com": 1, 
   "coinrail.co.kr": 1, 
+  "cointiger.com": 1, 
   "cointobe.com": 1, 
   "coinut.com": 1, 
   "collateralmurder.com": 1, 
@@ -11532,12 +11739,14 @@ var domainsUsingProxy = {
   "cosplayjav.pl": 1, 
   "costco.com": 1, 
   "cotweet.com": 1, 
+  "counter.social": 1, 
   "coursehero.com": 1, 
   "cpj.org": 1, 
   "cq99.us": 1, 
   "crackle.com": 1, 
   "crazys.cc": 1, 
   "crazyshit.com": 1, 
+  "crbug.com": 1, 
   "crchina.org": 1, 
   "crd-net.org": 1, 
   "creaders.net": 1, 
@@ -11592,6 +11801,7 @@ var domainsUsingProxy = {
   "daidostup.ru": 1, 
   "dailidaili.com": 1, 
   "dailymotion.com": 1, 
+  "dailyview.tw": 1, 
   "daiphapinfo.net": 1, 
   "dajiyuan.com": 1, 
   "dajiyuan.de": 1, 
@@ -11654,6 +11864,7 @@ var domainsUsingProxy = {
   "delcamp.net": 1, 
   "delicious.com": 1, 
   "democrats.org": 1, 
+  "demosisto.hk": 1, 
   "depositphotos.com": 1, 
   "derekhsu.homeip.net": 1, 
   "desc.se": 1, 
@@ -11680,6 +11891,7 @@ var domainsUsingProxy = {
   "dipity.com": 1, 
   "directcreative.com": 1, 
   "discoins.com": 1, 
+  "disconnect.me": 1, 
   "discordapp.com": 1, 
   "discordapp.net": 1, 
   "discuss.com.hk": 1, 
@@ -11717,6 +11929,7 @@ var domainsUsingProxy = {
   "docker.com": 1, 
   "docker.io": 1, 
   "doctorvoice.org": 1, 
+  "documentingreality.com": 1, 
   "dogfartnetwork.com": 1, 
   "dojin.com": 1, 
   "dok-forum.net": 1, 
@@ -11737,7 +11950,9 @@ var domainsUsingProxy = {
   "dotsub.com": 1, 
   "dotvpn.com": 1, 
   "doub.io": 1, 
+  "doubibackup.com": 1, 
   "doubleclick.net": 1, 
+  "doubmirror.cf": 1, 
   "dougscripts.com": 1, 
   "douhokanko.net": 1, 
   "doujincafe.com": 1, 
@@ -11801,6 +12016,7 @@ var domainsUsingProxy = {
   "dynssl.com": 1, 
   "dynu.com": 1, 
   "dynu.net": 1, 
+  "dysfz.cc": 1, 
   "dzze.com": 1, 
   "e-classical.com.tw": 1, 
   "e-gold.com": 1, 
@@ -11854,6 +12070,7 @@ var domainsUsingProxy = {
   "eksisozluk.com": 1, 
   "electionsmeter.com": 1, 
   "elgoog.im": 1, 
+  "ellawine.org": 1, 
   "elpais.com": 1, 
   "eltondisney.com": 1, 
   "emaga.com": 1, 
@@ -11866,6 +12083,7 @@ var domainsUsingProxy = {
   "emulefans.com": 1, 
   "emuparadise.me": 1, 
   "enanyang.my": 1, 
+  "encyclopedia.com": 1, 
   "enewstree.com": 1, 
   "enfal.de": 1, 
   "engadget.com": 1, 
@@ -11928,6 +12146,7 @@ var domainsUsingProxy = {
   "eucasino.com": 1, 
   "eulam.com": 1, 
   "eurekavpt.com": 1, 
+  "euronews.com": 1, 
   "europa.eu": 1, 
   "evschool.net": 1, 
   "exblog.co.jp": 1, 
@@ -11959,6 +12178,7 @@ var domainsUsingProxy = {
   "facebook.net": 1, 
   "facebook.nl": 1, 
   "facebook.se": 1, 
+  "facebookmail.com": 1, 
   "facebookquotes4u.com": 1, 
   "faceless.me": 1, 
   "facesofnyfw.com": 1, 
@@ -12002,6 +12222,7 @@ var domainsUsingProxy = {
   "fangongheike.com": 1, 
   "fanhaodang.com": 1, 
   "fanqiang.tk": 1, 
+  "fanqiangdang.com": 1, 
   "fanqianghou.com": 1, 
   "fanqiangyakexi.net": 1, 
   "fanqiangzhe.com": 1, 
@@ -12037,6 +12258,8 @@ var domainsUsingProxy = {
   "fdc64.org": 1, 
   "fdc89.jp": 1, 
   "feedburner.com": 1, 
+  "feedly.com": 1, 
+  "feedx.net": 1, 
   "feelssh.com": 1, 
   "feer.com": 1, 
   "feifeiss.com": 1, 
@@ -12105,6 +12328,7 @@ var domainsUsingProxy = {
   "foolsmountain.com": 1, 
   "fooooo.com": 1, 
   "footwiball.com": 1, 
+  "foreignpolicy.com": 1, 
   "forum4hk.com": 1, 
   "forums-free.com": 1, 
   "fotile.me": 1, 
@@ -12145,6 +12369,7 @@ var domainsUsingProxy = {
   "freefq.com": 1, 
   "freefuckvids.com": 1, 
   "freegao.com": 1, 
+  "freehongkong.org": 1, 
   "freeilhamtohti.org": 1, 
   "freekwonpyong.org": 1, 
   "freelotto.com": 1, 
@@ -12200,6 +12425,7 @@ var domainsUsingProxy = {
   "fuckcnnic.net": 1, 
   "fuckgfw.org": 1, 
   "fuckgfw233.org": 1, 
+  "fulione.com": 1, 
   "fullerconsideration.com": 1, 
   "fulue.com": 1, 
   "funf.tw": 1, 
@@ -12225,6 +12451,7 @@ var domainsUsingProxy = {
   "g-area.org": 1, 
   "g-queen.com": 1, 
   "g.co": 1, 
+  "g0v.social": 1, 
   "g6hentai.com": 1, 
   "gabocorp.com": 1, 
   "gaeproxy.com": 1, 
@@ -12462,6 +12689,7 @@ var domainsUsingProxy = {
   "googlezip.net": 1, 
   "gopetition.com": 1, 
   "goproxing.net": 1, 
+  "goregrish.com": 1, 
   "gospelherald.com": 1, 
   "got-game.org": 1, 
   "gotdns.ch": 1, 
@@ -12505,6 +12733,7 @@ var domainsUsingProxy = {
   "guancha.org": 1, 
   "guaneryu.com": 1, 
   "guangming.com.my": 1, 
+  "guangnianvpn.com": 1, 
   "guardster.com": 1, 
   "guishan.org": 1, 
   "gumroad.com": 1, 
@@ -12541,6 +12770,7 @@ var domainsUsingProxy = {
   "hahlo.com": 1, 
   "hakkatv.org.tw": 1, 
   "handcraftedsoftware.org": 1, 
+  "hanime.tv": 1, 
   "hanminzu.org": 1, 
   "hanunyi.com": 1, 
   "hao123.com": 1, 
@@ -12554,6 +12784,7 @@ var domainsUsingProxy = {
   "hautelook.com": 1, 
   "hautelookcdn.com": 1, 
   "have8.com": 1, 
+  "hbg.com": 1, 
   "hbo.com": 1, 
   "hclips.com": 1, 
   "hdlt.me": 1, 
@@ -12606,6 +12837,7 @@ var domainsUsingProxy = {
   "higfw.com": 1, 
   "highpeakspureearth.com": 1, 
   "highrockmedia.com": 1, 
+  "hightail.com": 1, 
   "hihiforum.com": 1, 
   "hihistory.net": 1, 
   "hiitch.com": 1, 
@@ -12708,6 +12940,7 @@ var domainsUsingProxy = {
   "hrcir.com": 1, 
   "hrea.org": 1, 
   "hrichina.org": 1, 
+  "hrtsea.com": 1, 
   "hrw.org": 1, 
   "hrweb.org": 1, 
   "hsjp.net": 1, 
@@ -12734,6 +12967,7 @@ var domainsUsingProxy = {
   "huaxin.ph": 1, 
   "huayuworld.org": 1, 
   "hudatoriq.web.id": 1, 
+  "hudson.org": 1, 
   "huffingtonpost.com": 1, 
   "hugoroy.eu": 1, 
   "huhaitai.com": 1, 
@@ -12869,6 +13103,7 @@ var domainsUsingProxy = {
   "internetdefenseleague.org": 1, 
   "internetfreedom.org": 1, 
   "internetpopculture.com": 1, 
+  "inthenameofconfuciusmovie.com": 1, 
   "inxian.com": 1, 
   "iownyour.biz": 1, 
   "iownyour.org": 1, 
@@ -12889,6 +13124,7 @@ var domainsUsingProxy = {
   "iptv.com.tw": 1, 
   "iptvbin.com": 1, 
   "ipvanish.com": 1, 
+  "iqiyi.com": 1, 
   "iredmail.org": 1, 
   "irib.ir": 1, 
   "ironpython.net": 1, 
@@ -12993,6 +13229,7 @@ var domainsUsingProxy = {
   "jinhai.de": 1, 
   "jinpianwang.com": 1, 
   "jinroukong.com": 1, 
+  "jintian.net": 1, 
   "jinx.com": 1, 
   "jiruan.net": 1, 
   "jitouch.com": 1, 
@@ -13006,12 +13243,15 @@ var domainsUsingProxy = {
   "joachims.org": 1, 
   "jobso.tv": 1, 
   "joinbbs.net": 1, 
+  "joinmastodon.org": 1, 
   "journalchretien.net": 1, 
   "journalofdemocracy.org": 1, 
   "joymiihub.com": 1, 
   "joyourself.com": 1, 
   "jpopforum.net": 1, 
   "jqueryui.com": 1, 
+  "jshell.net": 1, 
+  "jtvnw.net": 1, 
   "jubushoushen.com": 1, 
   "juhuaren.com": 1, 
   "jukujo-club.com": 1, 
@@ -13084,6 +13324,7 @@ var domainsUsingProxy = {
   "kink.com": 1, 
   "kinmen.org.tw": 1, 
   "kinmen.travel": 1, 
+  "kinokuniya.com": 1, 
   "kir.jp": 1, 
   "kissbbao.cn": 1, 
   "kiwi.kz": 1, 
@@ -13175,6 +13416,7 @@ var domainsUsingProxy = {
   "lhakar.org": 1, 
   "lhasocialwork.org": 1, 
   "liangyou.net": 1, 
+  "liangzhichuanmei.com": 1, 
   "lianyue.net": 1, 
   "liaowangxizang.net": 1, 
   "liberal.org.hk": 1, 
@@ -13183,7 +13425,10 @@ var domainsUsingProxy = {
   "lidecheng.com": 1, 
   "lifemiles.com": 1, 
   "lighten.org.tw": 1, 
+  "lighti.me": 1, 
   "lightnovel.cn": 1, 
+  "lightyearvpn.com": 1, 
+  "lihkg.com": 1, 
   "like.com": 1, 
   "limiao.net": 1, 
   "line-apps.com": 1, 
@@ -13226,6 +13471,7 @@ var domainsUsingProxy = {
   "llss.me": 1, 
   "load.to": 1, 
   "lobsangwangyal.com": 1, 
+  "localbitcoins.com": 1, 
   "localdomain.ws": 1, 
   "localpresshk.com": 1, 
   "lockestek.com": 1, 
@@ -13308,6 +13554,7 @@ var domainsUsingProxy = {
   "marxists.org": 1, 
   "mash.to": 1, 
   "maskedip.com": 1, 
+  "mastodon.social": 1, 
   "matainja.com": 1, 
   "material.io": 1, 
   "mathable.io": 1, 
@@ -13324,6 +13571,7 @@ var domainsUsingProxy = {
   "mcfog.com": 1, 
   "mcreasite.com": 1, 
   "md-t.org": 1, 
+  "me.me": 1, 
   "me.uk": 1, 
   "meansys.com": 1, 
   "media.org.hk": 1, 
@@ -13346,7 +13594,9 @@ var domainsUsingProxy = {
   "memorybbs.com": 1, 
   "memri.org": 1, 
   "memrijttm.org": 1, 
+  "mercatox.com": 1, 
   "mercyprophet.org": 1, 
+  "mergersandinquisitions.org": 1, 
   "meridian-trust.org": 1, 
   "meripet.biz": 1, 
   "meripet.com": 1, 
@@ -13355,6 +13605,7 @@ var domainsUsingProxy = {
   "mesotw.com": 1, 
   "messenger.com": 1, 
   "metacafe.com": 1, 
+  "metart.com": 1, 
   "metarthunter.com": 1, 
   "meteorshowersonline.com": 1, 
   "metrohk.com.hk": 1, 
@@ -13375,6 +13626,7 @@ var domainsUsingProxy = {
   "mihr.com": 1, 
   "mihua.org": 1, 
   "mikesoltys.com": 1, 
+  "mikocon.com": 1, 
   "milph.net": 1, 
   "milsurps.com": 1, 
   "mimiai.net": 1, 
@@ -13433,6 +13685,7 @@ var domainsUsingProxy = {
   "mog.com": 1, 
   "mohu.club": 1, 
   "mohu.ml": 1, 
+  "mojim.com": 1, 
   "molihua.org": 1, 
   "monar.ch": 1, 
   "mondex.org": 1, 
@@ -13451,6 +13704,7 @@ var domainsUsingProxy = {
   "moroneta.com": 1, 
   "mos.ru": 1, 
   "motherless.com": 1, 
+  "motiyun.com": 1, 
   "motor4ik.ru": 1, 
   "mousebreaker.com": 1, 
   "movements.org": 1, 
@@ -13469,6 +13723,7 @@ var domainsUsingProxy = {
   "mrface.com": 1, 
   "mrslove.com": 1, 
   "mrtweet.com": 1, 
+  "msa-it.org": 1, 
   "msguancha.com": 1, 
   "msha.gov": 1, 
   "msn.com": 1, 
@@ -13611,6 +13866,7 @@ var domainsUsingProxy = {
   "newscn.org": 1, 
   "newsdetox.ca": 1, 
   "newsdh.com": 1, 
+  "newsmagazine.asia": 1, 
   "newspeak.cc": 1, 
   "newstamago.com": 1, 
   "newstapa.org": 1, 
@@ -13647,6 +13903,7 @@ var domainsUsingProxy = {
   "ninjaproxy.ninja": 1, 
   "nintendium.com": 1, 
   "ninth.biz": 1, 
+  "niu.moe": 1, 
   "niusnews.com": 1, 
   "njactb.org": 1, 
   "njuice.com": 1, 
@@ -13676,6 +13933,7 @@ var domainsUsingProxy = {
   "npa.go.jp": 1, 
   "npnt.me": 1, 
   "nps.gov": 1, 
+  "npsboost.com": 1, 
   "nradio.me": 1, 
   "nrk.no": 1, 
   "ns01.biz": 1, 
@@ -13787,6 +14045,7 @@ var domainsUsingProxy = {
   "openid.net": 1, 
   "openleaks.org": 1, 
   "openvpn.net": 1, 
+  "openvpn.org": 1, 
   "openwebster.com": 1, 
   "openwrt.org.cn": 1, 
   "opera-mini.net": 1, 
@@ -13805,6 +14064,7 @@ var domainsUsingProxy = {
   "orzdream.com": 1, 
   "orzistic.org": 1, 
   "osfoora.com": 1, 
+  "otcbtc.com": 1, 
   "otnd.org": 1, 
   "otto.de": 1, 
   "otzo.com": 1, 
@@ -13917,11 +14177,13 @@ var domainsUsingProxy = {
   "picturesocial.com": 1, 
   "pin-cong.com": 1, 
   "pin6.com": 1, 
+  "pincong.rocks": 1, 
   "ping.fm": 1, 
   "pinimg.com": 1, 
   "pinkrod.com": 1, 
   "pinoy-n.com": 1, 
   "pinterest.at": 1, 
+  "pinterest.ca": 1, 
   "pinterest.co.kr": 1, 
   "pinterest.com": 1, 
   "pinterest.de": 1, 
@@ -13950,6 +14212,7 @@ var domainsUsingProxy = {
   "plm.org.hk": 1, 
   "plunder.com": 1, 
   "plurk.com": 1, 
+  "plus.codes": 1, 
   "plus28.com": 1, 
   "plusbb.com": 1, 
   "pmatehunter.com": 1, 
@@ -13996,6 +14259,7 @@ var domainsUsingProxy = {
   "post852.com": 1, 
   "postadult.com": 1, 
   "postimg.org": 1, 
+  "potato.im": 1, 
   "potvpn.com": 1, 
   "power.com": 1, 
   "powerapple.com": 1, 
@@ -14004,10 +14268,12 @@ var domainsUsingProxy = {
   "powerpointninja.com": 1, 
   "prayforchina.net": 1, 
   "premeforwindows7.com": 1, 
+  "premproxy.com": 1, 
   "presentationzen.com": 1, 
   "presidentlee.tw": 1, 
   "prestige-av.com": 1, 
   "printfriendly.com": 1, 
+  "prism-break.org": 1, 
   "prisoneralert.com": 1, 
   "pritunl.com": 1, 
   "privacybox.de": 1, 
@@ -14047,6 +14313,7 @@ var domainsUsingProxy = {
   "pullfolio.com": 1, 
   "punyu.com": 1, 
   "pure18.com": 1, 
+  "pureapk.com": 1, 
   "pureconcepts.net": 1, 
   "pureinsight.org": 1, 
   "purepdf.com": 1, 
@@ -14089,12 +14356,14 @@ var domainsUsingProxy = {
   "quitccp.net": 1, 
   "quitccp.org": 1, 
   "quora.com": 1, 
+  "quoracdn.net": 1, 
   "quran.com": 1, 
   "quranexplorer.com": 1, 
   "qusi8.net": 1, 
   "qvodzy.org": 1, 
   "qx.net": 1, 
   "qxbbs.org": 1, 
+  "qz.com": 1, 
   "r18.com": 1, 
   "ra.gg": 1, 
   "radicalparty.org": 1, 
@@ -14121,8 +14390,10 @@ var domainsUsingProxy = {
   "rapidgator.net": 1, 
   "rapidmoviez.com": 1, 
   "rapidvpn.com": 1, 
+  "rarbgprx.org": 1, 
   "raremovie.cc": 1, 
   "raremovie.net": 1, 
+  "raw.githubusercontent.com": 1, 
   "rawgit.com": 1, 
   "rawgithub.com": 1, 
   "raxcdn.com": 1, 
@@ -14151,6 +14422,7 @@ var domainsUsingProxy = {
   "redchinacn.org": 1, 
   "redd.it": 1, 
   "reddit.com": 1, 
+  "redditlist.com": 1, 
   "redditmedia.com": 1, 
   "redditstatic.com": 1, 
   "redhotlabs.com": 1, 
@@ -14180,6 +14452,7 @@ var domainsUsingProxy = {
   "rferl.org": 1, 
   "rfi.fr": 1, 
   "rfi.my": 1, 
+  "rg3.github.io": 1, 
   "rightbtc.com": 1, 
   "rightster.com": 1, 
   "rigpa.org": 1, 
@@ -14187,6 +14460,8 @@ var domainsUsingProxy = {
   "rileyguide.com": 1, 
   "ritouki.jp": 1, 
   "ritter.vg": 1, 
+  "rixcloud.com": 1, 
+  "rixcloud.us": 1, 
   "rlwlw.com": 1, 
   "rmjdw.com": 1, 
   "rmjdw132.info": 1, 
@@ -14216,6 +14491,7 @@ var domainsUsingProxy = {
   "rtycminnesota.org": 1, 
   "ruanyifeng.com": 1, 
   "rukor.org": 1, 
+  "runbtx.com": 1, 
   "rushbee.com": 1, 
   "ruten.com.tw": 1, 
   "rutube.ru": 1, 
@@ -14242,10 +14518,12 @@ var domainsUsingProxy = {
   "sambhota.org": 1, 
   "sandscotaicentral.com": 1, 
   "sanmin.com.tw": 1, 
+  "sans.edu": 1, 
   "sapikachu.net": 1, 
   "saveliuxiaobo.com": 1, 
   "savemedia.com": 1, 
   "savethedate.foo": 1, 
+  "savethesounds.info": 1, 
   "savetibet.de": 1, 
   "savetibet.fr": 1, 
   "savetibet.nl": 1, 
@@ -14401,6 +14679,7 @@ var domainsUsingProxy = {
   "sitebro.tw": 1, 
   "sitekreator.com": 1, 
   "sitemaps.org": 1, 
+  "six-degrees.io": 1, 
   "sixth.biz": 1, 
   "sjrt.org": 1, 
   "sjum.cn": 1, 
@@ -14445,6 +14724,7 @@ var domainsUsingProxy = {
   "sobees.com": 1, 
   "soc.mil": 1, 
   "socialwhale.com": 1, 
+  "socks-proxy.net": 1, 
   "sockscap64.com": 1, 
   "sockslist.net": 1, 
   "socrec.org": 1, 
@@ -14453,7 +14733,9 @@ var domainsUsingProxy = {
   "softether-download.com": 1, 
   "softether.co.jp": 1, 
   "softether.org": 1, 
+  "softfamous.com": 1, 
   "softlayer.net": 1, 
+  "softsmirror.cf": 1, 
   "softwarebychuck.com": 1, 
   "sogclub.com": 1, 
   "sogoo.org": 1, 
@@ -14502,6 +14784,7 @@ var domainsUsingProxy = {
   "speedify.com": 1, 
   "spem.at": 1, 
   "spencertipping.com": 1, 
+  "spendee.com": 1, 
   "spicevpn.com": 1, 
   "spideroak.com": 1, 
   "spike.com": 1, 
@@ -14521,7 +14804,9 @@ var domainsUsingProxy = {
   "ssglobal.me": 1, 
   "ssh91.com": 1, 
   "ssl443.org": 1, 
+  "sspanel.net": 1, 
   "sspro.ml": 1, 
+  "ssr.tools": 1, 
   "ssrshare.com": 1, 
   "sss.camp": 1, 
   "sstatic.net": 1, 
@@ -14543,6 +14828,7 @@ var domainsUsingProxy = {
   "steamcommunity.com": 1, 
   "steampowered.com": 1, 
   "steel-storm.com": 1, 
+  "steemit.com": 1, 
   "steganos.com": 1, 
   "steganos.net": 1, 
   "stepchina.com": 1, 
@@ -14604,6 +14890,7 @@ var domainsUsingProxy = {
   "suyangg.com": 1, 
   "svsfx.com": 1, 
   "swagbucks.com": 1, 
+  "swissinfo.ch": 1, 
   "swissvpn.net": 1, 
   "switch1.jp": 1, 
   "switchvpn.net": 1, 
@@ -14640,6 +14927,7 @@ var domainsUsingProxy = {
   "taiwandaily.net": 1, 
   "taiwandc.org": 1, 
   "taiwanjustice.com": 1, 
+  "taiwanjustice.net": 1, 
   "taiwankiss.com": 1, 
   "taiwannation.com": 1, 
   "taiwannation.com.tw": 1, 
@@ -14652,6 +14940,7 @@ var domainsUsingProxy = {
   "taiwanyes.com": 1, 
   "talk853.com": 1, 
   "talkboxapp.com": 1, 
+  "talkcc.com": 1, 
   "talkonly.net": 1, 
   "tamiaode.tk": 1, 
   "tampabay.com": 1, 
@@ -14734,6 +15023,7 @@ var domainsUsingProxy = {
   "theinitium.com": 1, 
   "thenewslens.com": 1, 
   "thepiratebay.org": 1, 
+  "theporndude.com": 1, 
   "theportalwiki.com": 1, 
   "thereallove.kr": 1, 
   "thespeeder.com": 1, 
@@ -14747,6 +15037,7 @@ var domainsUsingProxy = {
   "thevivekspot.com": 1, 
   "thewgo.org": 1, 
   "theync.com": 1, 
+  "thinkgeek.com": 1, 
   "thinkingtaiwan.com": 1, 
   "thinkwithgoogle.com": 1, 
   "thisav.com": 1, 
@@ -14852,6 +15143,7 @@ var domainsUsingProxy = {
   "timdir.com": 1, 
   "time.com": 1, 
   "timsah.com": 1, 
+  "tinc-vpn.org": 1, 
   "tiney.com": 1, 
   "tineye.com": 1, 
   "tintuc101.com": 1, 
@@ -14884,6 +15176,7 @@ var domainsUsingProxy = {
   "toodoc.com": 1, 
   "toonel.net": 1, 
   "top.tv": 1, 
+  "top10vpn.com": 1, 
   "top81.ws": 1, 
   "topbtc.com": 1, 
   "topnews.in": 1, 
@@ -14902,6 +15195,7 @@ var domainsUsingProxy = {
   "torvpn.com": 1, 
   "totalvpn.com": 1, 
   "toutiaoabc.com": 1, 
+  "toutyrater.github.io": 1, 
   "towngain.com": 1, 
   "toypark.in": 1, 
   "toythieves.com": 1, 
@@ -14930,10 +15224,10 @@ var domainsUsingProxy = {
   "tsquare.tv": 1, 
   "tsu.org.tw": 1, 
   "tsunagarumon.com": 1, 
-  "tt-rss.org": 1, 
   "tt1069.com": 1, 
   "tttan.com": 1, 
   "ttv.com.tw": 1, 
+  "ttvnw.net": 1, 
   "tu8964.com": 1, 
   "tubaholic.com": 1, 
   "tube.com": 1, 
@@ -15045,6 +15339,7 @@ var domainsUsingProxy = {
   "twitbrowser.net": 1, 
   "twitcause.com": 1, 
   "twitch.tv": 1, 
+  "twitchcdn.net": 1, 
   "twitgether.com": 1, 
   "twitgoo.com": 1, 
   "twitiq.com": 1, 
@@ -15084,6 +15379,7 @@ var domainsUsingProxy = {
   "tycool.com": 1, 
   "typekit.net": 1, 
   "typepad.com": 1, 
+  "u15.info": 1, 
   "u9un.com": 1, 
   "ub0.cc": 1, 
   "ubddns.org": 1, 
@@ -15166,6 +15462,7 @@ var domainsUsingProxy = {
   "usus.cc": 1, 
   "utopianpal.com": 1, 
   "uu-gg.com": 1, 
+  "uukanshu.com": 1, 
   "uvwxyz.xyz": 1, 
   "uwants.com": 1, 
   "uwants.net": 1, 
@@ -15186,6 +15483,7 @@ var domainsUsingProxy = {
   "vanilla-jp.com": 1, 
   "vanpeople.com": 1, 
   "vansky.com": 1, 
+  "vaticannews.va": 1, 
   "vatn.org": 1, 
   "vcf-online.org": 1, 
   "vcfbuilder.org": 1, 
@@ -15299,6 +15597,7 @@ var domainsUsingProxy = {
   "vs.com": 1, 
   "vtunnel.com": 1, 
   "vuku.cc": 1, 
+  "vultryhw.com": 1, 
   "vzw.com": 1, 
   "w3.org": 1, 
   "w3schools.com": 1, 
@@ -15328,6 +15627,7 @@ var domainsUsingProxy = {
   "warehouse333.com": 1, 
   "waselpro.com": 1, 
   "washeng.net": 1, 
+  "washingtonpost.com": 1, 
   "watch8x.com": 1, 
   "watchinese.com": 1, 
   "watchmygf.net": 1, 
@@ -15452,7 +15752,9 @@ var domainsUsingProxy = {
   "wordpress.com": 1, 
   "workatruna.com": 1, 
   "workerdemo.org.hk": 1, 
+  "workerempowerment.org": 1, 
   "workersthebig.net": 1, 
+  "workflow.is": 1, 
   "worldcat.org": 1, 
   "worldjournal.com": 1, 
   "worldvpn.net": 1, 
@@ -15603,6 +15905,7 @@ var domainsUsingProxy = {
   "yibada.com": 1, 
   "yibaochina.com": 1, 
   "yidio.com": 1, 
+  "yigeni.com": 1, 
   "yilubbs.com": 1, 
   "yimg.com": 1, 
   "yingsuoss.com": 1, 
@@ -15617,6 +15920,7 @@ var domainsUsingProxy = {
   "yomiuri.co.jp": 1, 
   "yong.hu": 1, 
   "yorkbbs.ca": 1, 
+  "you-get.org": 1, 
   "youdontcare.com": 1, 
   "youjizz.com": 1, 
   "youmaker.com": 1, 
@@ -15732,6 +16036,7 @@ var domainsUsingProxy = {
   "zyns.com": 1, 
   "zyzc9.com": 1, 
   "zzcartoon.com": 1, 
+  "zzcloud.me": 1, 
   "zzux.com": 1
 };
 
@@ -15825,12 +16130,12 @@ function FindProxyForURL(url, host) {
     }
 
     if (!ipRegExp.test(host)) {
-        if (testDomain(host, directDomains, true)) {
-            return direct
-        }
-
         if (testDomain(host, domainsUsingProxy)) {
             return proxy;
+        }
+        
+        if (testDomain(host, directDomains, true)) {
+            return direct
         }
         strIp = dnsResolve(host);
     } else {
