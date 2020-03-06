@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 import re
@@ -6,10 +6,10 @@ import math
 import socket
 import struct
 import pkgutil
-import urlparse
+import urllib.parse
 import json
 import logging
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 from argparse import ArgumentParser
 
 gfwlist_url = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt'
@@ -45,14 +45,14 @@ def ip2long(ip):
 def fetch_ip_data():
     args = parse_args()
     if (args.ip_file):
-        with open(args.ip_file, 'rb') as f:
+        with open(args.ip_file, 'r') as f:
             data = f.read()
     else:
         #fetch data from apnic
-        print "Fetching data from apnic.net, it might take a few minutes, please wait..."
+        print("Fetching data from apnic.net, it might take a few minutes, please wait...")
         url=r'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest'
       # url=r'http://flora/delegated-apnic-latest' #debug
-        data=urllib2.urlopen(url).read()
+        data=urllib.request.urlopen(url).read().decode('utf-8')
 
     cnregex=re.compile(r'apnic\|cn\|ipv4\|[0-9\.]+\|[0-9]+\|[0-9]+\|a.*',re.IGNORECASE)
     cndata=cnregex.findall(data)
@@ -114,7 +114,7 @@ def get_hostname(something):
         # quite enough for GFW
         if not something.startswith('http:'):
             something = 'http://' + something
-        r = urlparse.urlparse(something)
+        r = urllib.parse.urlparse(something)
         return r.hostname
     except Exception as e:
         logging.error(e)
@@ -161,14 +161,14 @@ def parse_gfwlist(gfwlist):
 def reduce_domains(domains):
     # reduce 'www.google.com' to 'google.com'
     # remove invalid domains
-    with open('./tld.txt', 'rb') as f:
+    with open('./tld.txt', 'r') as f:
             tld_content = f.read()
     tlds = set(tld_content.splitlines(False))
     new_domains = set()
     for domain in domains:
         domain_parts = domain.split('.')
         last_root_domain = None
-        for i in xrange(0, len(domain_parts)):
+        for i in range(0, len(domain_parts)):
             root_domain = '.'.join(domain_parts[len(domain_parts) - i - 1:])
             if i == 0:
                 if not tlds.__contains__(root_domain):
@@ -185,7 +185,7 @@ def reduce_domains(domains):
     uni_domains = set()
     for domain in new_domains:
         domain_parts = domain.split('.')
-        for i in xrange(0, len(domain_parts)-1):
+        for i in range(0, len(domain_parts)-1):
             root_domain = '.'.join(domain_parts[len(domain_parts) - i - 1:])
             if domains.__contains__(root_domain):
                 break
@@ -196,7 +196,7 @@ def reduce_domains(domains):
 
 def generate_pac_fast(domains, proxy, direct_domains, cnips, local_tlds):
     # render the pac file
-    with open('./pac-template', 'rb') as f:
+    with open('./pac-template', 'r') as f:
         proxy_content = f.read()
     domains_dict = {}
     for domain in domains:
@@ -242,7 +242,7 @@ def generate_pac_precise(rules, proxy):
         return None
     # render the pac file
     proxy_content = pkgutil.get_data('gfwlist2pac', './abp.js')
-    rules = filter(grep_rule, rules)
+    rules = list(filter(grep_rule, rules))
     proxy_content = proxy_content.replace('__PROXY__', json.dumps(str(proxy)))
     proxy_content = proxy_content.replace('__RULES__',
                                           json.dumps(rules, indent=2))
@@ -255,46 +255,46 @@ def main():
     direct_rule = None
     localtld_rule = None
     if (args.input):
-        with open(args.input, 'rb') as f:
+        with open(args.input, 'r') as f:
             content = f.read()
     else:
-        print 'Downloading gfwlist from %s' % gfwlist_url
-        content = urllib2.urlopen(gfwlist_url, timeout=10).read()
+        print('Downloading gfwlist from %s' % gfwlist_url)
+        content = urllib.request.urlopen(gfwlist_url, timeout=10).read().decode('utf-8')
     if args.user_rule:
-        userrule_parts = urlparse.urlsplit(args.user_rule)
+        userrule_parts = urllib.parse.urlsplit(args.user_rule)
         if not userrule_parts.scheme or not userrule_parts.netloc:
             # It's not an URL, deal it as local file
-            with open(args.user_rule, 'rb') as f:
+            with open(args.user_rule, 'r') as f:
                 user_rule = f.read()
         else:
             # Yeah, it's an URL, try to download it
-            print 'Downloading user rules file from %s' % args.user_rule
-            user_rule = urllib2.urlopen(args.user_rule, timeout=10).read()
+            print('Downloading user rules file from %s' % args.user_rule)
+            user_rule = urllib.request.urlopen(args.user_rule, timeout=10).read().decode('utf-8')
 
     if args.direct_rule:
-        directrule_parts = urlparse.urlsplit(args.direct_rule)
+        directrule_parts = urllib.parse.urlsplit(args.direct_rule)
         if not directrule_parts.scheme or not directrule_parts.netloc:
             # It's not an URL, deal it as local file
-            with open(args.direct_rule, 'rb') as f:
+            with open(args.direct_rule, 'r') as f:
                 direct_rule = f.read()
         else:
             # Yeah, it's an URL, try to download it
-            print 'Downloading user rules file from %s' % args.user_rule
-            direct_rule = urllib2.urlopen(args.direct_rule, timeout=10).read()
+            print('Downloading user rules file from %s' % args.user_rule)
+            direct_rule = urllib.request.urlopen(args.direct_rule, timeout=10).read().decode('utf-8')
         direct_rule = direct_rule.splitlines(False)
     else:
         direct_rule = []
 
     if args.localtld_rule:
-        tldrule_parts = urlparse.urlsplit(args.localtld_rule)
+        tldrule_parts = urllib.parse.urlsplit(args.localtld_rule)
         if not tldrule_parts.scheme or not tldrule_parts.netloc:
             # It's not an URL, deal it as local file
-            with open(args.localtld_rule, 'rb') as f:
+            with open(args.localtld_rule, 'r') as f:
                 localtld_rule = f.read()
         else:
             # Yeah, it's an URL, try to download it
-            print 'Downloading local tlds rules file from %s' % args.user_rule
-            localtld_rule = urllib2.urlopen(args.localtld_rule, timeout=10).read()
+            print('Downloading local tlds rules file from %s' % args.user_rule)
+            localtld_rule = urllib.request.urlopen(args.localtld_rule, timeout=10).read().decode('utf-8')
         localtld_rule = localtld_rule.splitlines(False)
     else:
         localtld_rule = []
@@ -308,7 +308,7 @@ def main():
     domains = reduce_domains(domains)
     pac_content = generate_pac_fast(domains, args.proxy, direct_rule, cnips, localtld_rule)
 
-    with open(args.output, 'wb') as f:
+    with open(args.output, 'w') as f:
         f.write(pac_content)
 
 
