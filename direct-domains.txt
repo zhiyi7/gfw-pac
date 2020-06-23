@@ -372,3 +372,5 @@ apple.cn
 weibocdn.com
 tb.cn
 jddebug.com
+360hu.com
+cmpassport.com
