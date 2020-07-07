@@ -11,6 +11,7 @@ import json
 import logging
 import urllib.request, urllib.error, urllib.parse
 from argparse import ArgumentParser
+import base64
 
 gfwlist_url = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt'
 
@@ -104,7 +105,7 @@ def decode_gfwlist(content):
     try:
         if '.' in content:
             raise Exception()
-        return content.decode('base64')
+        return base64.b64decode(content).decode('utf-8')
     except:
         return content
 
