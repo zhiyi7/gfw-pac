@@ -374,3 +374,10 @@ tb.cn
 jddebug.com
 360hu.com
 cmpassport.com
+iqiyi.com
+iqiyipic.com
+qy.net
+bdstatic.com
+mmstat.com
+taobao.com
+alicdn.com

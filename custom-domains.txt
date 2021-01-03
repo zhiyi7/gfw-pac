@@ -42,3 +42,4 @@ scdn.co
 spotify.com
 spotilocal.com
 ocsp.apple.com
+raw.githubusercontent.com
