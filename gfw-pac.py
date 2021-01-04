@@ -306,7 +306,7 @@ def main():
     gfwlist = combine_lists(content, user_rule)
 
     domains = parse_gfwlist(gfwlist)
-    domains = reduce_domains(domains)
+    # domains = reduce_domains(domains)
     pac_content = generate_pac_fast(domains, args.proxy, direct_rule, cnips, localtld_rule)
 
     with open(args.output, 'w') as f:
