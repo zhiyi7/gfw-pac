@@ -1,4 +1,4 @@
-var proxy = "SOCKS5 10.0.0.1:8080; PROXY 10.0.0.1:3128; DIRECT";
+var proxy = "PROXY 10.0.0.1:3128; SOCKS5 10.0.0.1:8080; DIRECT";
 
 var direct = 'DIRECT;';
 
@@ -1079,6 +1079,11 @@ var cnips = [
     15
   ],
   [
+    967835648,
+    4294836224,
+    15
+  ],
+  [
     973996032,
     4294836224,
     15
@@ -2064,14 +2069,9 @@ var cnips = [
     15
   ],
   [
-    1697447936,
+    1697579008,
     4294901760,
     16
-  ],
-  [
-    1697513472,
-    4294836224,
-    15
   ],
   [
     1697644544,
@@ -3200,6 +3200,21 @@ var cnips = [
   ],
   [
     1740242944,
+    4294901760,
+    23
+  ],
+  [
+    1740439552,
+    4294901760,
+    23
+  ],
+  [
+    1740505088,
+    4294901760,
+    23
+  ],
+  [
+    1740570624,
     4294901760,
     23
   ],
@@ -4339,6 +4354,11 @@ var cnips = [
     16
   ],
   [
+    1921384448,
+    4294901760,
+    22
+  ],
+  [
     1921449984,
     4294901760,
     16
@@ -4350,6 +4370,11 @@ var cnips = [
   ],
   [
     1921843200,
+    4294901760,
+    21
+  ],
+  [
+    1921908736,
     4294901760,
     21
   ],
@@ -10917,6 +10942,7 @@ var directDomains = {
   "iask.com": 1,
   "iciba.com": 1,
   "icloud.com": 1,
+  "icloud.com.cn": 1,
   "idqqimg.com": 1,
   "ifanr.com": 1,
   "ifeng.com": 1,
@@ -11427,7 +11453,6 @@ var domainsUsingProxy = {
   "annatam.com": 1,
   "anobii.com": 1,
   "anontext.com": 1,
-  "anonymise.us": 1,
   "anonymitynetwork.com": 1,
   "anonymizer.com": 1,
   "anonymouse.org": 1,
@@ -11731,6 +11756,7 @@ var domainsUsingProxy = {
   "blinkx.com": 1,
   "blinw.com": 1,
   "blip.tv": 1,
+  "blockcast.it": 1,
   "blockcn.com": 1,
   "blockedbyhk.com": 1,
   "blockless.com": 1,
@@ -11836,6 +11862,7 @@ var domainsUsingProxy = {
   "brave.com": 1,
   "bravotube.net": 1,
   "brazzers.com": 1,
+  "breached.to": 1,
   "break.com": 1,
   "breakgfw.com": 1,
   "breaking911.com": 1,
@@ -11873,6 +11900,7 @@ var domainsUsingProxy = {
   "bunbunhk.com": 1,
   "busayari.com": 1,
   "business-humanrights.org": 1,
+  "business.page": 1,
   "businessinsider.com": 1,
   "businesstoday.com.tw": 1,
   "businessweek.com": 1,
@@ -12267,6 +12295,7 @@ var domainsUsingProxy = {
   "crossfire.co.kr": 1,
   "crossthewall.net": 1,
   "crossvpn.net": 1,
+  "croxyproxy.com": 1,
   "crrev.com": 1,
   "crucial.com": 1,
   "crunchyroll.com": 1,
@@ -13053,6 +13082,7 @@ var domainsUsingProxy = {
   "gamez.com.tw": 1,
   "gamousa.com": 1,
   "ganges.com": 1,
+  "ganjingworld.com": 1,
   "gaoming.net": 1,
   "gaopi.net": 1,
   "gaozhisheng.net": 1,
@@ -13197,6 +13227,7 @@ var domainsUsingProxy = {
   "gongminliliang.com": 1,
   "gongwt.com": 1,
   "goo.gl": 1,
+  "goo.gle": 1,
   "goo.ne.jp": 1,
   "gooday.xyz": 1,
   "gooddns.info": 1,
@@ -13907,6 +13938,7 @@ var domainsUsingProxy = {
   "jobso.tv": 1,
   "joinclubhouse.com": 1,
   "joinmastodon.org": 1,
+  "jornaldacidadeonline.com.br": 1,
   "journalchretien.net": 1,
   "journalofdemocracy.org": 1,
   "joymiihub.com": 1,
@@ -13914,6 +13946,7 @@ var domainsUsingProxy = {
   "jp.hao123.com": 1,
   "jpl.nasa.gov": 1,
   "jpopforum.net": 1,
+  "jsdelivr.net": 1,
   "jtvnw.net": 1,
   "jubushoushen.com": 1,
   "juhuaren.com": 1,
@@ -14092,7 +14125,7 @@ var domainsUsingProxy = {
   "liberal.org.hk": 1,
   "libertytimes.com.tw": 1,
   "library.usc.cuhk.edu.hk": 1,
-  "lidecheng.com": 1,
+  "libredd.it": 1,
   "lifemiles.com": 1,
   "lighten.org.tw": 1,
   "lighti.me": 1,
@@ -14277,7 +14310,8 @@ var domainsUsingProxy = {
   "megarotic.com": 1,
   "megavideo.com": 1,
   "megurineluka.com": 1,
-  "meirixiaochao.com": 1,
+  "meizhong.blog": 1,
+  "meizhong.report": 1,
   "meltoday.com": 1,
   "meme.yahoo.com": 1,
   "memehk.com": 1,
@@ -14300,6 +14334,7 @@ var domainsUsingProxy = {
   "metart.com": 1,
   "metarthunter.com": 1,
   "meteorshowersonline.com": 1,
+  "metro.taipei": 1,
   "metrohk.com.hk": 1,
   "metrolife.ca": 1,
   "metroradio.com.hk": 1,
@@ -14556,6 +14591,7 @@ var domainsUsingProxy = {
   "netflix.com": 1,
   "netflix.net": 1,
   "netme.cc": 1,
+  "netsarang.com": 1,
   "netsneak.com": 1,
   "network54.com": 1,
   "networkedblogs.com": 1,
@@ -14783,6 +14819,7 @@ var domainsUsingProxy = {
   "onedumb.com": 1,
   "onejav.com": 1,
   "onion.city": 1,
+  "onion.ly": 1,
   "online.recoveryversion.org": 1,
   "onlinecha.com": 1,
   "onlineyoutube.com": 1,
@@ -14820,6 +14857,7 @@ var domainsUsingProxy = {
   "organiccrap.com": 1,
   "orgasm.com": 1,
   "orgfree.com": 1,
+  "oricon.co.jp": 1,
   "orient-doll.com": 1,
   "orientaldaily.com.my": 1,
   "orn.jp": 1,
@@ -14835,6 +14873,7 @@ var domainsUsingProxy = {
   "oursteps.com.au": 1,
   "oursweb.net": 1,
   "ourtv.hk": 1,
+  "overcast.fm": 1,
   "overdaily.org": 1,
   "overplay.net": 1,
   "oversea.istarshine.com": 1,
@@ -14887,6 +14926,7 @@ var domainsUsingProxy = {
   "paste.ee": 1,
   "pastebin.com": 1,
   "pastie.org": 1,
+  "patreon.com": 1,
   "paxful.com": 1,
   "pbs.org": 1,
   "pbwiki.com": 1,
@@ -15064,6 +15104,7 @@ var domainsUsingProxy = {
   "procopytips.com": 1,
   "project-syndicate.org": 1,
   "prosiben.de": 1,
+  "proton.me": 1,
   "protonvpn.com": 1,
   "provideocoalition.com": 1,
   "provpnaccounts.com": 1,
@@ -15228,6 +15269,7 @@ var domainsUsingProxy = {
   "registry.google": 1,
   "relaxbbs.com": 1,
   "relay.com.tw": 1,
+  "relay.firefox.com": 1,
   "releaseinternational.org": 1,
   "religionnews.com": 1,
   "religioustolerance.org": 1,
@@ -15384,6 +15426,7 @@ var domainsUsingProxy = {
   "sellclassics.com": 1,
   "sendsmtp.com": 1,
   "sendspace.com": 1,
+  "sensortower.com": 1,
   "servehttp.com": 1,
   "serveuser.com": 1,
   "serveusers.com": 1,
@@ -15562,6 +15605,7 @@ var domainsUsingProxy = {
   "sohfrance.org": 1,
   "sokamonline.com": 1,
   "sokmil.com": 1,
+  "solana.com": 1,
   "solarsystem.nasa.gov": 1,
   "solidaritetibet.org": 1,
   "solidfiles.com": 1,
@@ -15694,6 +15738,7 @@ var domainsUsingProxy = {
   "stumbleupon.com": 1,
   "stupidvideos.com": 1,
   "subacme.rerouted.org": 1,
+  "substack.com": 1,
   "successfn.com": 1,
   "suche.gmx.net": 1,
   "sugarsync.com": 1,
@@ -15869,6 +15914,7 @@ var domainsUsingProxy = {
   "thedalailamamovie.com": 1,
   "thediplomat.com": 1,
   "thedw.us": 1,
+  "theepochtimes.com": 1,
   "thefacebook.com": 1,
   "thefrontier.hk": 1,
   "thegay.com": 1,
@@ -16352,6 +16398,7 @@ var domainsUsingProxy = {
   "us.to": 1,
   "usacn.com": 1,
   "usaip.eu": 1,
+  "uscnpm.org": 1,
   "userapi.nytlog.com": 1,
   "users.skynet.be": 1,
   "usfk.mil": 1,
@@ -16450,6 +16497,7 @@ var domainsUsingProxy = {
   "viu.com": 1,
   "viu.tv": 1,
   "vivahentai4u.net": 1,
+  "vivaldi.com": 1,
   "vivatube.com": 1,
   "vivthomas.com": 1,
   "vizvaz.com": 1,
@@ -16571,6 +16619,7 @@ var domainsUsingProxy = {
   "waymo.com": 1,
   "wda.gov.tw": 1,
   "wdf5.com": 1,
+  "wealth.com.tw": 1,
   "wearehairy.com": 1,
   "wearn.com": 1,
   "web.dev": 1,
@@ -16704,6 +16753,7 @@ var domainsUsingProxy = {
   "workatruna.com": 1,
   "workerdemo.org.hk": 1,
   "workerempowerment.org": 1,
+  "workers.dev": 1,
   "workersthebig.net": 1,
   "worldcat.org": 1,
   "worldjournal.com": 1,
@@ -16711,6 +16761,7 @@ var domainsUsingProxy = {
   "wow-life.net": 1,
   "wow.com": 1,
   "wowgirls.com": 1,
+  "wowhead.com": 1,
   "wowlegacy.ml": 1,
   "wowporn.com": 1,
   "wowrk.com": 1,
@@ -16759,7 +16810,6 @@ var domainsUsingProxy = {
   "www.lib.virginia.edu": 1,
   "www.linksalpha.com": 1,
   "www.m-sport.co.uk": 1,
-  "www.metro.taipei": 1,
   "www.monlamit.org": 1,
   "www.moztw.org": 1,
   "www.nbc.com": 1,
@@ -16822,6 +16872,7 @@ var domainsUsingProxy = {
   "xijie.wordpress.com": 1,
   "xing.com": 1,
   "xinhuanet.org": 1,
+  "xinjiangpolicefiles.org": 1,
   "xinmiao.com.hk": 1,
   "xinqimeng.over-blog.com": 1,
   "xinsheng.net": 1,
