@@ -43,3 +43,6 @@ spotify.com
 spotilocal.com
 ocsp.apple.com
 raw.githubusercontent.com
+bing.com
+microsoft.com
+live.com

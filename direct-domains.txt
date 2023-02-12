@@ -99,7 +99,6 @@ cmfu.com
 cmread.com
 cmwb.com
 cn.archive.ubuntu.com
-cn.bing.com
 cn.coremetrics.com
 cn.debian.org
 cn.msn.com
@@ -210,7 +209,6 @@ meilishuo.com
 meituan.com
 meituan.net
 meizu.com
-microsoft.com
 miui.com
 moe123.com
 moegirl.org
@@ -382,3 +380,4 @@ mmstat.com
 taobao.com
 alicdn.com
 icloud.com.cn
+icloud-content.com.cn

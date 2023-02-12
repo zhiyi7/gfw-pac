@@ -2381,7 +2381,7 @@ var cnips = [
   [
     1729232896,
     4294901760,
-    22
+    23
   ],
   [
     1729298432,
@@ -4754,11 +4754,6 @@ var cnips = [
     16
   ],
   [
-    1959657472,
-    4294901760,
-    22
-  ],
-  [
     1959723008,
     4294901760,
     16
@@ -5060,11 +5055,6 @@ var cnips = [
   ],
   [
     1986461696,
-    4294901760,
-    22
-  ],
-  [
-    1986723840,
     4294901760,
     22
   ],
@@ -10676,7 +10666,7 @@ var cnips = [
   [
     3749380096,
     4294901760,
-    16
+    17
   ],
   [
     3749445632,
@@ -10881,7 +10871,6 @@ var directDomains = {
   "cmwb.com": 1,
   "cn": 1,
   "cn.archive.ubuntu.com": 1,
-  "cn.bing.com": 1,
   "cn.coremetrics.com": 1,
   "cn.debian.org": 1,
   "cn.msn.com": 1,
@@ -10941,6 +10930,7 @@ var directDomains = {
   "hupu.com": 1,
   "iask.com": 1,
   "iciba.com": 1,
+  "icloud-content.com.cn": 1,
   "icloud.com": 1,
   "icloud.com.cn": 1,
   "idqqimg.com": 1,
@@ -10995,7 +10985,6 @@ var directDomains = {
   "meituan.com": 1,
   "meituan.net": 1,
   "meizu.com": 1,
-  "microsoft.com": 1,
   "miui.com": 1,
   "mmstat.com": 1,
   "moe123.com": 1,
@@ -11726,6 +11715,7 @@ var domainsUsingProxy = {
   "biliworld.com": 1,
   "billypan.com": 1,
   "binance.com": 1,
+  "bing.com": 1,
   "binux.me": 1,
   "bird.so": 1,
   "bit-z.com": 1,
@@ -14161,6 +14151,7 @@ var domainsUsingProxy = {
   "liujianshu.com": 1,
   "liuxiaobo.net": 1,
   "liuxiaotong.com": 1,
+  "live.com": 1,
   "livecoin.net": 1,
   "livedoor.jp": 1,
   "liveleak.com": 1,
@@ -14348,6 +14339,7 @@ var domainsUsingProxy = {
   "mhradio.org": 1,
   "michaelanti.com": 1,
   "michaelmarketl.com": 1,
+  "microsoft.com": 1,
   "microvpn.com": 1,
   "middle-way.net": 1,
   "mihk.hk": 1,
