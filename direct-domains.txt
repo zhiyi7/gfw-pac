@@ -381,3 +381,7 @@ taobao.com
 alicdn.com
 icloud.com.cn
 icloud-content.com.cn
+bootstrapcdn.com
+intra.douban.com
+dapps.douban.com
+douban.io
