@@ -18,21 +18,18 @@ gfwlist_url = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument('-i', '--input', dest='input',
-                        help='path to gfwlist', metavar='GFWLIST')
     parser.add_argument('-f', '--file', dest='output', required=True,
-                        help='path to output pac', metavar='PAC')
+                        help='输出的PAC文件名', metavar='PAC')
     parser.add_argument('-p', '--proxy', dest='proxy', required=True,
-                        help='the proxy parameter in the pac file, '
-                             'for example, "SOCKS5 127.0.0.1:1080;"',
+                        help='代理服务器, '
+                             '例如, "PROXY 127.0.0.1:3128;"',
                         metavar='PROXY')
     parser.add_argument('--user-rule', dest='user_rule',
-                        help='user rule file, which will be appended to'
-                             ' gfwlist')
+                        help='直接通过代理域名的文件，每行一个')
     parser.add_argument('--direct-rule', dest='direct_rule',
-                        help='user rule file, contains domains not bypass proxy')
+                        help='直连的域名文件，每行一个')
     parser.add_argument('--localtld-rule', dest='localtld_rule',
-                        help='local TLD rule file, contains TLDs with a leading dot not bypass proxy')
+                        help='本地 TLD 规则文件, 不走代理, 每行一个，以 . 开头')
     parser.add_argument('--ip-file', dest='ip_file',
                         help='delegated-apnic-latest from apnic.net')
     return parser.parse_args()
@@ -51,7 +48,7 @@ def fetch_ip_data():
     else:
         #fetch data from apnic
         print("Fetching data from apnic.net, it might take a few minutes, please wait...")
-        url=r'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest'
+        url=r'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest'
       # url=r'http://flora/delegated-apnic-latest' #debug
         data=urllib.request.urlopen(url).read().decode('utf-8')
 
@@ -255,12 +252,6 @@ def main():
     user_rule = None
     direct_rule = None
     localtld_rule = None
-    if (args.input):
-        with open(args.input, 'r') as f:
-            content = f.read()
-    else:
-        print('Downloading gfwlist from %s' % gfwlist_url)
-        content = urllib.request.urlopen(gfwlist_url, timeout=10).read().decode('utf-8')
     if args.user_rule:
         userrule_parts = urllib.parse.urlsplit(args.user_rule)
         if not userrule_parts.scheme or not userrule_parts.netloc:
@@ -302,10 +293,7 @@ def main():
 
     cnips = fetch_ip_data()
 
-    content = decode_gfwlist(content)
-    gfwlist = combine_lists(content, user_rule)
-
-    domains = parse_gfwlist(gfwlist)
+    domains = []
     # domains = reduce_domains(domains)
     pac_content = generate_pac_fast(domains, args.proxy, direct_rule, cnips, localtld_rule)
 

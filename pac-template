@@ -14,6 +14,40 @@ var hasOwnProperty = Object.hasOwnProperty;
 
 var ipRegExp = new RegExp(/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/);
 
+function isIPv6(ip) {
+    // Split the IP address into groups of hexadecimal digits
+    const groups = ip.split(':');
+
+    // An IPv6 address must have at least one group and at most 8 groups
+    if (groups.length < 1 || groups.length > 8) {
+        return false;
+    }
+
+    // Check that each group is a valid hexadecimal number
+    for (const group of groups) {
+        // Check that the group is not null, undefined, or an empty string before calling parseInt()
+        if (group === null || group === undefined || group === '') {
+            continue;
+        }
+
+        // Use parseInt() to check if the group is a valid hexadecimal number
+        const value = parseInt(group, 16);
+        if (isNaN(value) || value < 0 || value > 0xFFFF) {
+            return false;
+        }
+    }
+
+    // If the address contains a double colon, ensure that it appears only once
+    if (ip.includes('::')) {
+        if (ip.indexOf('::') !== ip.lastIndexOf('::')) {
+            return false;
+        }
+    }
+
+    // The address is valid if it passes all the checks
+    return true;
+}
+
 function convertAddress(ipchars) {
     var bytes = ipchars.split('.');
     var result = ((bytes[0] & 0xff) << 24) |
@@ -45,9 +79,6 @@ function testDomain(target, domains, cnRootIncluded) {
     var idxB = target.lastIndexOf('.', idxA - 1);
     var hasOwnProperty = Object.hasOwnProperty;
     var suffix = cnRootIncluded ? target.substring(idxA + 1) : '';
-    if (suffix === 'cn') {
-        return true;
-    }
     while (true) {
         if (idxB === -1) {
             if (hasOwnProperty.call(domains, target)) {
@@ -110,7 +141,7 @@ function FindProxyForURL(url, host) {
     if (!strIp) {
         return proxy;
     }
-    
+
     intIp = convertAddress(strIp);
 
     if (match(intIp)) {
