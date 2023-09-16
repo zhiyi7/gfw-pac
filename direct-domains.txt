@@ -1,17 +1,8 @@
-aliyun.com
-aliyuncdn.com
-aliyuncs.com
 baidu.com
 baidupcs.com
 baidustatic.com
 bdimg.com
 bdstatic.com
-dbank.com
 gtimg.com
 qq.com
 qstatic.com
-taobao.com
-taobaocdn.com
-tmall.com
-tmcdn.net
-tb.cn

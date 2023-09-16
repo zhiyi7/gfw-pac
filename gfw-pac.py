@@ -262,6 +262,7 @@ def main():
             # Yeah, it's an URL, try to download it
             print('Downloading user rules file from %s' % args.user_rule)
             user_rule = urllib.request.urlopen(args.user_rule, timeout=10).read().decode('utf-8')
+        user_rule = user_rule.splitlines(False)
 
     if args.direct_rule:
         directrule_parts = urllib.parse.urlsplit(args.direct_rule)
@@ -293,9 +294,8 @@ def main():
 
     cnips = fetch_ip_data()
 
-    domains = []
     # domains = reduce_domains(domains)
-    pac_content = generate_pac_fast(domains, args.proxy, direct_rule, cnips, localtld_rule)
+    pac_content = generate_pac_fast(user_rule, args.proxy, direct_rule, cnips, localtld_rule)
 
     with open(args.output, 'w') as f:
         f.write(pac_content)

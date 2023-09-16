@@ -10761,26 +10761,34 @@ var cnips = [
 ];
 
 var directDomains = {
-  "aliyun.com": 1,
-  "aliyuncdn.com": 1,
-  "aliyuncs.com": 1,
   "baidu.com": 1,
   "baidupcs.com": 1,
   "baidustatic.com": 1,
   "bdimg.com": 1,
   "bdstatic.com": 1,
-  "dbank.com": 1,
   "gtimg.com": 1,
   "qq.com": 1,
-  "qstatic.com": 1,
-  "taobao.com": 1,
-  "taobaocdn.com": 1,
-  "tb.cn": 1,
-  "tmall.com": 1,
-  "tmcdn.net": 1
+  "qstatic.com": 1
 };
 
-var domainsUsingProxy = {};
+var domainsUsingProxy = {
+  "bing.cn": 1,
+  "bing.com": 1,
+  "bing.net": 1,
+  "ggpht.com": 1,
+  "github.com": 1,
+  "githubusercontent.com": 1,
+  "google-analytics.com": 1,
+  "google.com": 1,
+  "google.com.hk": 1,
+  "googleadservices.com": 1,
+  "googleadsserving.cn": 1,
+  "googleapis.com": 1,
+  "googlesyndication.com": 1,
+  "live.com": 1,
+  "stackoverflow.com": 1,
+  "wikipedia.org": 1
+};
 
 var localTlds = {
   ".localhost": 1,
