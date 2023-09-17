@@ -3,6 +3,10 @@ baidupcs.com
 baidustatic.com
 bdimg.com
 bdstatic.com
-gtimg.com
+cdnnode.cn
 qq.com
+gtimg.com
 qstatic.com
+cdn-go.cn
+qpic.cn
+qqmail.com

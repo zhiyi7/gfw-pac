@@ -1,6 +1,57 @@
-var proxy = "PROXY 127.0.0.1:3128";
+var proxy = "PROXY 10.0.0.1:3128";
 
-var direct = 'DIRECT;';
+var direct = 'DIRECT';
+
+var directDomains = {
+  "baidu.com": 1,
+  "baidupcs.com": 1,
+  "baidustatic.com": 1,
+  "bdimg.com": 1,
+  "bdstatic.com": 1,
+  "cdn-go.cn": 1,
+  "cdnnode.cn": 1,
+  "gtimg.com": 1,
+  "qpic.cn": 1,
+  "qq.com": 1,
+  "qqmail.com": 1,
+  "qstatic.com": 1
+};
+
+var domainsUsingProxy = {
+  "bing.cn": 1,
+  "bing.com": 1,
+  "bing.net": 1,
+  "cloudflare.com": 1,
+  "docker.com": 1,
+  "facebook.com": 1,
+  "facebook.net": 1,
+  "fbcdn.net": 1,
+  "github.com": 1,
+  "github.io": 1,
+  "githubassets.com": 1,
+  "githubusercontent.com": 1,
+  "godaddy.com": 1,
+  "google.com": 1,
+  "google.com.hk": 1,
+  "googleapis.com": 1,
+  "googleusercontent.com": 1,
+  "googlevideo.com": 1,
+  "gstatic.com": 1,
+  "jsdelivr.com": 1,
+  "live.com": 1,
+  "segment.io": 1,
+  "stackoverflow.com": 1,
+  "twitter.com": 1,
+  "unpkg.com": 1,
+  "wikipedia.org": 1,
+  "youtube.com": 1,
+  "ytimg.com": 1
+};
+
+var localTlds = {
+  ".localhost": 1,
+  ".test": 1
+};
 
 var cnips = [
   [
@@ -10760,41 +10811,6 @@ var cnips = [
   ]
 ];
 
-var directDomains = {
-  "baidu.com": 1,
-  "baidupcs.com": 1,
-  "baidustatic.com": 1,
-  "bdimg.com": 1,
-  "bdstatic.com": 1,
-  "gtimg.com": 1,
-  "qq.com": 1,
-  "qstatic.com": 1
-};
-
-var domainsUsingProxy = {
-  "bing.cn": 1,
-  "bing.com": 1,
-  "bing.net": 1,
-  "ggpht.com": 1,
-  "github.com": 1,
-  "githubusercontent.com": 1,
-  "google-analytics.com": 1,
-  "google.com": 1,
-  "google.com.hk": 1,
-  "googleadservices.com": 1,
-  "googleadsserving.cn": 1,
-  "googleapis.com": 1,
-  "googlesyndication.com": 1,
-  "live.com": 1,
-  "stackoverflow.com": 1,
-  "wikipedia.org": 1
-};
-
-var localTlds = {
-  ".localhost": 1,
-  ".test": 1
-};
-
 var hasOwnProperty = Object.hasOwnProperty;
 
 var ipRegExp = new RegExp(/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/);
@@ -10859,25 +10875,28 @@ function match(ip) {
     return false;
 }
 
-function testDomain(target, domains, cnRootIncluded) {
-    var idxA = target.lastIndexOf('.');
-    var idxB = target.lastIndexOf('.', idxA - 1);
-    var hasOwnProperty = Object.hasOwnProperty;
-    var suffix = cnRootIncluded ? target.substring(idxA + 1) : '';
-    while (true) {
-        if (idxB === -1) {
-            if (hasOwnProperty.call(domains, target)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        suffix = target.substring(idxB + 1);
-        if (hasOwnProperty.call(domains, suffix)) {
+function isInDirectDomain(host) {
+    if (hasOwnProperty.call(directDomains, host)) {
+        return true;
+    }
+    for (var domain in directDomains) {
+        if (host.endsWith('.' + domain)) {
             return true;
         }
-        idxB = target.lastIndexOf('.', idxB - 1);
     }
+    return false;
+}
+
+function isInProxyDomain(host) {
+    if (hasOwnProperty.call(domainsUsingProxy, host)) {
+        return true;
+    }
+    for (var domain in domainsUsingProxy) {
+        if (host.endsWith('.' + domain)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function isLocalTestDomain(domain) {
@@ -10891,31 +10910,38 @@ function isLocalTestDomain(domain) {
 
 /* https://github.com/frenchbread/private-ip */
 function isPrivateIp(ip) {
-  return /^(::f{4}:)?10\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
-  /^(::f{4}:)?192\.168\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
-  /^(::f{4}:)?172\.(1[6-9]|2\d|30|31)\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
-  /^(::f{4}:)?127\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
-  /^(::f{4}:)?169\.254\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
-  /^f[cd][0-9a-f]{2}:/i.test(ip) ||
-  /^fe80:/i.test(ip) ||
-  /^::1$/.test(ip) ||
-  /^::$/.test(ip);
+    return /^(::f{4}:)?10\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+        /^(::f{4}:)?192\.168\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+        /^(::f{4}:)?172\.(1[6-9]|2\d|30|31)\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+        /^(::f{4}:)?127\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+        /^(::f{4}:)?169\.254\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(ip) ||
+        /^f[cd][0-9a-f]{2}:/i.test(ip) ||
+        /^fe80:/i.test(ip) ||
+        /^::1$/.test(ip) ||
+        /^::$/.test(ip);
 }
 
 function FindProxyForURL(url, host) {
     if (isPlainHostName(host)
-     || isPrivateIp(host)
-     || isLocalTestDomain(host)
-     || host === 'localhost') {
+        || isPrivateIp(host)
+        || isLocalTestDomain(host)
+        || host === 'localhost') {
+        alert(`${host} MATCHES LOCAL, USING DIRECT`)
+        return direct;
+    }
+
+    if (shExpMatch(url, "http:*")) {
+        alert(`${host} IS USING HTTP, USING DIRECT`)
         return direct;
     }
 
     if (!ipRegExp.test(host)) {
-        if (testDomain(host, domainsUsingProxy)) {
+        if (isInProxyDomain(host)) {
+            alert(`${host} MATCHES PROXY DOMAIN`)
             return proxy;
         }
-        
-        if (testDomain(host, directDomains, true)) {
+        if (isInDirectDomain(host)) {
+            alert(`${host} MATCHES DIRECT DOMAIN`)
             return direct
         }
         strIp = dnsResolve(host);
@@ -10928,10 +10954,11 @@ function FindProxyForURL(url, host) {
     }
 
     intIp = convertAddress(strIp);
-
     if (match(intIp)) {
+        alert(`${host} MATCHES CNIP`)
         return direct;
     }
 
+    alert(`${host} NO RULES WARE MATCHED, USING PROXY`)
     return proxy;
 }
