@@ -2,6 +2,7 @@ google.com
 google.com.hk
 googleapis.com
 gstatic.com
+ggpht.com
 googleusercontent.com
 youtube.com
 googlevideo.com
