@@ -11,6 +11,7 @@ var directDomains = {
   "21cn.com": 1,
   "360buyimg.com": 1,
   "71edge.com": 1,
+  "adservice.google.com": 1,
   "alibabausercontent.com": 1,
   "alicdn.com": 1,
   "alipay.com": 1,
@@ -36,6 +37,8 @@ var directDomains = {
   "dingtalk.com": 1,
   "douyinpic.com": 1,
   "ecombdapi.com": 1,
+  "fonts.googleapis.com": 1,
+  "fonts.gstatic.com": 1,
   "gtimg.cn": 1,
   "gtimg.com": 1,
   "hdslb.com": 1,
@@ -57,6 +60,7 @@ var directDomains = {
   "sina.cn": 1,
   "sinaimg.cn": 1,
   "sinajs.cn": 1,
+  "ssl.gstatic.com": 1,
   "taobao.com": 1,
   "tencent.com": 1,
   "tmall.com": 1,
@@ -64,6 +68,7 @@ var directDomains = {
   "weibo.cn": 1,
   "weibo.com": 1,
   "weibocdn.com": 1,
+  "www.gstatic.com": 1,
   "xiaomi.com": 1,
   "ykimg.com": 1,
   "youku.com": 1,
@@ -10990,13 +10995,13 @@ function FindProxyForURL(url, host) {
     }
 
     if (!ipRegExp.test(host)) {
-        if (isInProxyDomain(host)) {
-            alert(`${host} MATCHES PROXY DOMAIN`)
-            return proxy;
-        }
         if (isInDirectDomain(host)) {
             alert(`${host} MATCHES DIRECT DOMAIN`)
             return direct
+        }
+        if (isInProxyDomain(host)) {
+            alert(`${host} MATCHES PROXY DOMAIN`)
+            return proxy;
         }
         strIp = dnsResolve(host);
     } else {

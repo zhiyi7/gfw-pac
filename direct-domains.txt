@@ -63,3 +63,8 @@ autonavi.com
 meituan.com
 meituan.net
 dianping.com
+adservice.google.com
+fonts.googleapis.com
+fonts.gstatic.com
+www.gstatic.com
+ssl.gstatic.com

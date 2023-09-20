@@ -135,13 +135,13 @@ function FindProxyForURL(url, host) {
     }
 
     if (!ipRegExp.test(host)) {
-        if (isInProxyDomain(host)) {
-            alert(`${host} MATCHES PROXY DOMAIN`)
-            return proxy;
-        }
         if (isInDirectDomain(host)) {
             alert(`${host} MATCHES DIRECT DOMAIN`)
             return direct
+        }
+        if (isInProxyDomain(host)) {
+            alert(`${host} MATCHES PROXY DOMAIN`)
+            return proxy;
         }
         strIp = dnsResolve(host);
     } else {
