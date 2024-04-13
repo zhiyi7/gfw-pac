@@ -20,7 +20,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add gfw.pac
-          git commit -a -m "Auto generat gfw.pac"
+          git commit -a -m "自动更新 gfw.pac"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
