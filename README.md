@@ -1,6 +1,8 @@
 # gfw-pac
 
-科学上网 PAC 文件生成器。通过自定义域名和中国 IP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的 IP 在国外的域名使用代理。
+科学上网 PAC 文件生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理。
+
+**每天自动从apnic获取国内IPv4地址段并更新gfw.pac文件，无特殊需要仅下载gfw.pac文件并且修改第一行即可**
 
 ## 特性
 * 速度快，优先按域名匹配，再按解析后的 IP 匹配
