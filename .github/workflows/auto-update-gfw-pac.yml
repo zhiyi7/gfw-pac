@@ -2,7 +2,7 @@ name: Monthly GFW PAC Update
 
 on:
   schedule:
-    - cron: '25 12 */5 * *'
+    - cron: '0 0 */1 * *'
   workflow_dispatch:
 
 jobs:
