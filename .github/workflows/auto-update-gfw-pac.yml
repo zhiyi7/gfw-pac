@@ -1,0 +1,29 @@
+name: Monthly GFW PAC Update
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  update-gfw-pac:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run gfw-pac.py script
+        run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --user-rule=custom-domains.txt --direct-rule=direct-domains.txt --localtld-rule=local-tlds.txt
+
+      - name: Commit gfw.pac
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add gfw.pac
+          git commit -a -m "Auto generat gfw.pac"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
