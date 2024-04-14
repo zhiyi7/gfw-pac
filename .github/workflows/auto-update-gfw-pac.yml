@@ -1,8 +1,8 @@
-name: Monthly GFW PAC Update
+name: GFW PAC Update
 
 on:
   schedule:
-    - cron: '0 0 */1 * *'
+    - cron: '0 0 */14 * *'
   workflow_dispatch:
 
 jobs:
