@@ -2,7 +2,7 @@
 
 科学上网 PAC 文件生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理。
 
-**此仓库每天自动通过GitHub Action从apnic获取国内IPv4地址段并更新gfw.pac文件**
+**此仓库每14天自动通过GitHub Action从apnic获取国内IPv4地址段并更新gfw.pac文件**
 
 ## 特性
 * 速度快，优先按域名匹配，再按解析后的 IP 匹配
