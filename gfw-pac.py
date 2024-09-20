@@ -24,11 +24,11 @@ def parse_args():
                         help='代理服务器, '
                              '例如, "PROXY 127.0.0.1:3128;"',
                         metavar='PROXY')
-    parser.add_argument('--user-rule', dest='user_rule',
+    parser.add_argument('--proxy-domains', dest='user_rule',
                         help='直接通过代理域名的文件，每行一个')
-    parser.add_argument('--direct-rule', dest='direct_rule',
+    parser.add_argument('--direct-domains', dest='direct_rule',
                         help='直连的域名文件，每行一个')
-    parser.add_argument('--localtld-rule', dest='localtld_rule',
+    parser.add_argument('--localtld-domains', dest='localtld_rule',
                         help='本地 TLD 规则文件, 不走代理, 每行一个，以 . 开头')
     parser.add_argument('--ip-file', dest='ip_file',
                         help='delegated-apnic-latest from apnic.net')

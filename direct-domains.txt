@@ -31,6 +31,8 @@ sinaimg.cn
 sinajs.cn
 sina.cn
 taobao.com
+aliyun.com
+aliyuncs.com
 alicdn.com
 alibabausercontent.com
 alipay.com
@@ -68,3 +70,4 @@ fonts.googleapis.com
 fonts.gstatic.com
 www.gstatic.com
 ssl.gstatic.com
+quark.cn

@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run gfw-pac.py script
-        run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --user-rule=custom-domains.txt --direct-rule=direct-domains.txt --localtld-rule=local-tlds.txt
+        run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt
 
       - name: Commit gfw.pac
         run: |
