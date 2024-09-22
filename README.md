@@ -1,6 +1,6 @@
 # gfw-pac
 
-科学上网 PAC 文件生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理。
+科学上网 PAC 文件以及生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理。
 
 **此仓库每14天自动通过GitHub Action从apnic获取国内IPv4地址段并更新gfw.pac文件**
 
@@ -34,9 +34,9 @@
     -h 显示帮助
     -f (必须)输出的 pac 文件
     -p (必须)指定代理服务器，例如 PROXY 192.168.1.1:3128
-    --user-domains 自定义使用代理的域名文件，文件里每行一个域名
-    --direct-domains 自定义不使用代理的域名文件，文件里每行一个域名
-    --localtld-domains 自定义不使用代理的顶级域，文件里每行一个域名，必须带前导圆点（例如 .test）
+    --proxy-domains 自定义使用代理的域名文件，文件里每行一个域名
+    --direct-domains 自定义直连的域名文件，文件里每行一个域名
+    --localtld-domains 自定义直连的顶级域，文件里每行一个域名，必须带前导圆点（例如 .test）
     --ip-file 指定本地的从 apnic 下载的 IP 分配文件。若不指定则自动从 apnic 下载
 
 举例：
@@ -52,4 +52,4 @@
 
 * 若自动下载 APNIC 的 IP 分配文件很慢，可自行用科学办法下载 <https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest> 后，用 `--ip-file` 参数指定下载好的文件。
 * 自行解决 DNS 污染问题。
-* 代理工具最好也配置 GEOIP 规则。
+* 代理工具最好也配置 GEOIP 路由规则。

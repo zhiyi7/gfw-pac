@@ -12,14 +12,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Download delegated-apnic-latest
+        run: curl https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest -o delegated-apnic-latest.txt
+
       - name: Run gfw-pac.py script
-        run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt
+        run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=delegated-apnic-latest.txt
 
       - name: Commit gfw.pac
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add gfw.pac
+          git add .
           git commit -a -m "自动更新 gfw.pac"
 
       - name: Push changes
