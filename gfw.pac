@@ -11078,22 +11078,18 @@ function FindProxyForURL(url, host) {
         || isPrivateIp(host)
         || isLocalTestDomain(host)
         || host === 'localhost') {
-        alert(`${host} MATCHES LOCAL, USING DIRECT`)
         return direct;
     }
 
     if (shExpMatch(url, "http:*")) {
-        alert(`${host} IS USING HTTP, USING DIRECT`)
         return direct;
     }
 
     if (!ipRegExp.test(host)) {
         if (isInDirectDomain(host)) {
-            alert(`${host} MATCHES DIRECT DOMAIN`)
             return direct
         }
         if (isInProxyDomain(host)) {
-            alert(`${host} MATCHES PROXY DOMAIN`)
             return proxy;
         }
         strIp = dnsResolve(host);
@@ -11107,10 +11103,8 @@ function FindProxyForURL(url, host) {
 
     intIp = convertAddress(strIp);
     if (match(intIp)) {
-        alert(`${host} MATCHES CNIP`)
         return direct;
     }
 
-    alert(`${host} NO RULES WARE MATCHED, USING PROXY`)
     return proxy;
 }
