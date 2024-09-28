@@ -71,3 +71,9 @@ fonts.gstatic.com
 www.gstatic.com
 ssl.gstatic.com
 quark.cn
+push.apple.com
+storage.live.com
+blob.core.windows.net
+self.events.data.microsoft.com
+mobile.events.data.microsoft.com
+browser.events.data.microsoft.com
