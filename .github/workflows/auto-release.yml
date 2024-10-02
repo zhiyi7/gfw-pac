@@ -26,12 +26,20 @@ jobs:
         commit_count=$(git log --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
         echo "::set-output name=commit_count::${commit_count}"
 
+    - name: Create Tag
+      id: create_tag
+      run: |
+        tag_name=v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
+        git tag $tag_name
+        git push origin $tag_name
+        echo "::set-output name=tag_name::$tag_name"
+
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        # tag_name: v$(date +%Y%m%d)-${{ steps.commit_count.outputs.commit_count }}
-        name: $(date +%Y%m%d)-${{ steps.commit_count.outputs.commit_count }}
+        tag_name: v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
+        name: $(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
         body: "Automatically generated release for pac file update"
         draft: false
         prerelease: false
