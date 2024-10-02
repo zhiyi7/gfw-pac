@@ -30,15 +30,15 @@ jobs:
     - name: Create Tag
       id: create_tag
       run: |
-        git tag "v${{ env.RELEASE_NAME }}"
-        git push origin v${{ env.RELEASE_NAME }}
+        git tag "${{ env.RELEASE_NAME }}"
+        git push origin ${{ env.RELEASE_NAME }}
 
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: "v${{ env.RELEASE_NAME }}"
-        name: "v${{ env.RELEASE_NAME }}"
+        tag_name: "${{ env.RELEASE_NAME }}"
+        name: "${{ env.RELEASE_NAME }}"
         body: "Automatically generated release for pac file update"
         draft: false
         prerelease: false
