@@ -37,7 +37,7 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        # tag_name: v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
+        tag_name: "v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}"
         name: $(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
         body: "Automatically generated release for pac file update"
         draft: false
