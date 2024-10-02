@@ -62,16 +62,12 @@ function ipToBinary(ip) {
 
 function searchRadixTree(bits) {
     var currentNode = radixTree;
-    var string = '';
     let isLastNode = false;
     for (var i=0; i<bits.length; i++) {
         var char = bits[i];
-        string += char;
         if (currentNode[char]) {
             currentNode = currentNode[char];
-            isLastNode = Object.keys(currentNode).every(function(key) {
-                return !currentNode[key]
-            })
+            isLastNode = Object.keys(currentNode).length === 0;
         } else {
             break;
         }
