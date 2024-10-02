@@ -1,0 +1,42 @@
+name: Auto Release on Specific File Update
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  release:
+    if: ${{ github.event.head_commit.modified.includes('gfw.pac') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get commit count for today
+        id: commit_count
+        run: |
+          echo "COMMIT_COUNT=$(git rev-list --count HEAD --since=$(date -I) && echo '.${{ github.run_number }}')" >> $GITHUB_OUTPUT
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: ${{ format('{}{}', (date +%Y%m%d), steps.commit_count.outputs.COMMIT_COUNT) }}
+
+      - name: Get changed file path
+        id: changed_file_path
+        run: |
+          CHANGED_FILE=$(git diff-tree --no-commit-id --name-only -r HEAD | grep -m 1 gfw.pac)
+          echo "CHANGED_FILE_PATH=$CHANGED_FILE" >> $GITHUB_OUTPUT
+
+      - name: Upload file as release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ steps.changed_file_path.outputs.CHANGED_FILE_PATH }}
+          asset_name: ${{ steps.changed_file_path.outputs.CHANGED_FILE_PATH | split("/") | last }}
