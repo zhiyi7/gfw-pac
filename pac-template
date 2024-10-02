@@ -62,7 +62,7 @@ function ipToBinary(ip) {
 
 function searchRadixTree(bits) {
     var currentNode = radixTree;
-    let isLastNode = false;
+    var isLastNode = false;
     for (var i=0; i<bits.length; i++) {
         var char = bits[i];
         if (currentNode[char]) {
@@ -72,7 +72,7 @@ function searchRadixTree(bits) {
             break;
         }
     }
-    return isLastNode
+    return isLastNode;
 }
   
 function isInDirectDomain(host) {
@@ -166,7 +166,7 @@ function debug(msg, host, ip) {
 var radixTree = new RadixTree();
 
 (function () {
-    var startTime = new Date().getMilliseconds()
+    var startTime = new Date().getMilliseconds();
     debug('开始生成 Radix Tree', 'PAC文件载入开始', startTime.toString());
     for (let i=0; i<cidrs.length; i++) {
         var cidr = cidrs[i];
