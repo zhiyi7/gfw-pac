@@ -24,21 +24,21 @@ jobs:
       run: |
         today=$(date +%Y%m%d)
         commit_count=$(git log --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
-        echo "::set-output name=commit_count::${commit_count}"
+        echo "COMMIT_COUNT=$commit_count" >> $GITHUB_ENV
+        echo "RELEASE_NAME=v$(TZ='Asia/Shanghai' date +%Y%m%d).$commit_count" >> $GITHUB_ENV
 
     - name: Create Tag
       id: create_tag
       run: |
-        tag_name=v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
-        git tag $tag_name
-        git push origin $tag_name
+        git tag "v${{ env.RELEASE_NAME }}"
+        git push origin v${{ env.RELEASE_NAME }}
 
     - name: Create Release
       id: create_release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
-        tag_name: "v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}"
-        name: $(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}
+        tag_name: "v${{ env.RELEASE_NAME }}"
+        name: "v${{ env.RELEASE_NAME }}"
         body: "Automatically generated release for pac file update"
         draft: false
         prerelease: false
@@ -46,4 +46,4 @@ jobs:
 
     - name: Verify Release
       run: |
-        echo "Release created with tag: v$(date +%Y%m%d).${{ steps.commit_count.outputs.commit_count }}"
+        echo "Release created with name ${{ env.RELEASE_NAME }}"
