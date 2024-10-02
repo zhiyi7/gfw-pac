@@ -1,20 +1,23 @@
 # gfw-pac
 
-科学上网 PAC 文件以及生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理。
+科学上网 PAC 文件以及生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理，支持IPv6。
 
-**此仓库每14天自动通过GitHub Action从apnic获取国内IPv4地址段并更新gfw.pac文件**
+**此仓库每 14 天自动通过 GitHub Action 从 `Loyalsoldier/geoip` 获取国内地址段并更新 `gfw.pac` 文件**
 
 ## 代理工具普遍支持路由规则，为什么还要用 pac 文件？
 
 如果浏览器所有流量都进入代理程序，那即使命中代理的直连规则，网络流量也要经过代理程序转发，性能会受影响。而先由浏览器通过 pac 文件决定用代理还是直连后，直连的流量不经过代理程序，性能更好。所有流行代理前端几乎都内置了 pac 文件，当选择代理前端提供的“pac模式”的时候，代理前端会将浏览器设置为它自动生成的 pac 文件。
 
 ## 特性
-* 速度快：优先按域名匹配，常用域名节省解析时间
-* IP规则前置：若域名解析出的 IPv4 地址属于国内，也返回直连，流量不经过代理程序
-* 可自定义需要代理的域名
-* 可自定义直连的域名
-* 可自定义直连的 TLD 域名，例如 .test
-* 直接可用的 `gfw.pac` 包含了常用的直连域名和代理域名
+* 开箱即用，直接可用的 `gfw.pac` 包含了常用的直连域名和代理域名以及国内IPv4/IPv6地址段
+* IP规则前置：若域名解析出的 IP 地址属于国内，返回直连，流量不经过代理程序
+* 速度快：优先按域名匹配，常用域名节省解析时间。IP段匹配使用Radix Tree，时间复杂度O(1)
+* 支持 IPv6，能正确处理IPv6地址段
+* 纯 IP 地址能正确处理，使用HTTP DNS的APP可正常使用。
+* 支持 iOS/MacOS/Windows/Android/chrome/edge/firefox。生成的 pac 文件体积小，全部使用ES5，大多数系统可正常执行。
+* 可自定义需要代理的域名（需可运行python）
+* 可自定义直连的域名（需可运行python）
+* 可自定义直连的 TLD 域名，例如 .test（需可运行python）
 
 ## 用法
 
@@ -27,7 +30,7 @@
                       [--proxy-domains 自定义使用代理域名的文件]
                       [--direct-domains 自定义直连域名域名的文件]
                       [--localtld-domains 本地TLD文件]
-                      [--ip-file APNIC下载的delegated文件]
+                      [--ip-file 从 Loyalsoldier/geoip/blob/release 中下载的 text/cn.txt 文件]
 
 参数说明：
 
@@ -37,7 +40,7 @@
     --proxy-domains 自定义使用代理的域名文件，文件里每行一个域名
     --direct-domains 自定义直连的域名文件，文件里每行一个域名
     --localtld-domains 自定义直连的顶级域，文件里每行一个域名，必须带前导圆点（例如 .test）
-    --ip-file 指定本地的从 apnic 下载的 IP 分配文件。若不指定则自动从 apnic 下载
+    --ip-file 从 Loyalsoldier/geoip release 中下载的 text/cn.txt 文件
 
 举例：
 
@@ -46,10 +49,9 @@
                  --proxy-domains=proxy-domains.txt \
                  --direct-domains=direct-domains.txt \
                  --localtld-domains=local-tlds.txt \
-                 --ip-file=delegated-apnic-latest.txt
+                 --ip-file=cidrs-cn.txt
 
 ## 技巧
 
-* 若自动下载 APNIC 的 IP 分配文件很慢，可自行用科学办法下载 <https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest> 后，用 `--ip-file` 参数指定下载好的文件。
 * 自行解决 DNS 污染问题。
-* 代理工具最好也配置 GEOIP 路由规则。
+* 代理工具最好也配置 GEOIP/GEOSITE 等路由规则。

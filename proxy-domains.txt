@@ -20,6 +20,7 @@ wikipedia.org
 godaddy.com
 cloudflare.com
 twitter.com
+twimg.com
 docker.com
 facebook.com
 facebook.net
@@ -27,3 +28,4 @@ fbcdn.net
 segment.io
 unpkg.com
 jsdelivr.com
+tv.apple.com
