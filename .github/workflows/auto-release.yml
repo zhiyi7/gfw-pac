@@ -12,9 +12,11 @@ jobs:
 
     steps:
       - name: Checkout repository
+        uses: actions/checkout@v4
         env:
           GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Git
         run: |
