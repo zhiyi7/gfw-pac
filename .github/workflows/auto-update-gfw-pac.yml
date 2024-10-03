@@ -9,10 +9,9 @@ jobs:
   update-gfw-pac:
     runs-on: ubuntu-latest
     steps:
-      - env:
-        GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-
       - name: Checkout repository
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         uses: actions/checkout@v4
 
       - name: Download cn.txt
@@ -22,6 +21,8 @@ jobs:
         run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
 
       - name: Commit changes
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -30,6 +31,8 @@ jobs:
 
       - name: Push changes
         uses: ad-m/github-push-action@master
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
           github_token: ${{ secrets.PERSONAL_TOKEN }}
           branch: master

@@ -11,43 +11,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-    - env:
-        GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      - name: Checkout repository
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        uses: actions/checkout@v3
 
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
-    - name: Set up Git
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
+      - name: Get commit count for today
+        id: commit_count
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          today=$(date +%Y%m%d)
+          commit_count=$(git log --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
+          echo "COMMIT_COUNT=$commit_count" >> $GITHUB_ENV
+          echo "RELEASE_NAME=v$(TZ='Asia/Shanghai' date +%Y%m%d).$commit_count" >> $GITHUB_ENV
 
-    - name: Get commit count for today
-      id: commit_count
-      run: |
-        today=$(date +%Y%m%d)
-        commit_count=$(git log --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
-        echo "COMMIT_COUNT=$commit_count" >> $GITHUB_ENV
-        echo "RELEASE_NAME=v$(TZ='Asia/Shanghai' date +%Y%m%d).$commit_count" >> $GITHUB_ENV
+      - name: Create Tag
+        id: create_tag
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          git tag "${{ env.RELEASE_NAME }}"
+          git push origin ${{ env.RELEASE_NAME }}
 
-    - name: Create Tag
-      id: create_tag
-      run: |
-        git tag "${{ env.RELEASE_NAME }}"
-        git push origin ${{ env.RELEASE_NAME }}
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        with:
+          tag_name: "${{ env.RELEASE_NAME }}"
+          name: "${{ env.RELEASE_NAME }}"
+          body: "Automatically generated release for pac file update"
+          draft: false
+          prerelease: false
+          files: gfw.pac
 
-    - name: Create Release
-      id: create_release
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: "${{ env.RELEASE_NAME }}"
-        name: "${{ env.RELEASE_NAME }}"
-        body: "Automatically generated release for pac file update"
-        draft: false
-        prerelease: false
-        files: gfw.pac
-
-    - name: Verify Release
-      run: |
-        echo "Release created with name ${{ env.RELEASE_NAME }}"
+      - name: Verify Release
+        run: |
+          echo "Release created with name ${{ env.RELEASE_NAME }}"
