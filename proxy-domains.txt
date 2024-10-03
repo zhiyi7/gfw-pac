@@ -1,9 +1,5 @@
-google.com
 google.com.hk
-googleapis.com
-gstatic.com
-ggpht.com
-googleusercontent.com
+ent.com
 youtube.com
 googlevideo.com
 ytimg.com

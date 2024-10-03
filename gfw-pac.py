@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import urllib.parse
 import json
 import urllib.request, urllib.error, urllib.parse
 from argparse import ArgumentParser
 import ipaddress
-import json
 
 def parse_args():
     parser = ArgumentParser()
@@ -22,7 +20,7 @@ def parse_args():
                         help='直连的域名文件，每行一个')
     parser.add_argument('--localtld-domains', dest='localtld_rule',
                         help='本地 TLD 规则文件, 不走代理, 每行一个，以 . 开头')
-    parser.add_argument('--ip-file', dest='ip_file',
+    parser.add_argument('--ip-file', dest='ip_file', required=True,
                         help='中国IP地址段文件')
     return parser.parse_args()
 
