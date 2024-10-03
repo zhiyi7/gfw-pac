@@ -86,6 +86,7 @@ www.google-analytics.com
 pagead2.googlesyndication.com
 adservice.google.com
 fonts.googleapis.com
+safebrowsing.googleapis.com
 fonts.gstatic.com
 www.gstatic.com
 ssl.gstatic.com
