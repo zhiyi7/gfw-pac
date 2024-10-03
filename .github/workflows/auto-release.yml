@@ -25,11 +25,12 @@ jobs:
         id: commit_count
         env:
           GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          TZ: "Asia/Shanghai"
         run: |
           today=$(date +%Y%m%d)
-          commit_count=$(git log --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
+          commit_count=$(git log --date=local --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
           echo "COMMIT_COUNT=$commit_count" >> $GITHUB_ENV
-          echo "RELEASE_NAME=v$(TZ='Asia/Shanghai' date +%Y%m%d).$commit_count" >> $GITHUB_ENV
+          echo "RELEASE_NAME=v$(date +%Y%m%d).$commit_count" >> $GITHUB_ENV
 
       - name: Create Tag
         id: create_tag
