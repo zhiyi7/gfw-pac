@@ -81,6 +81,8 @@ meituan.net
 sogou.com
 dianping.com
 quark.cn
+wps.cn
+wpscdn.cn
 push.apple.com
 setup.icloud.com
 appldnld.apple.com
