@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
           fetch-depth: 0
 
@@ -25,8 +23,6 @@ jobs:
 
       - name: Generate Release Name
         id: commit_count
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           today=$(date +%Y%m%d)
           commit_count=$(TZ=Asia/Shanghai git log --date=local --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
@@ -36,8 +32,6 @@ jobs:
 
       - name: Create Tag
         id: create_tag
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           git tag "${{ env.RELEASE_NAME }}"
           git push origin ${{ env.RELEASE_NAME }}
@@ -45,8 +39,6 @@ jobs:
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
           tag_name: "${{ env.RELEASE_NAME }}"
           name: "${{ env.RELEASE_NAME }}"

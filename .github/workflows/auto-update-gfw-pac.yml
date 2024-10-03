@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         uses: actions/checkout@v4
 
       - name: Download cn.txt
@@ -20,19 +18,15 @@ jobs:
       - name: Run gfw-pac.py script
         run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
 
-      - name: Commit changes
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
+          git add -A
           git commit -a -m "自动更新 cidrs-cn.txt 和 gfw.pac"
+          git push
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      - name: Trigger Auto-Release
+        uses: benc-uk/workflow-dispatch@v1
         with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
-          branch: master
+          workflow: Auto Generate Release

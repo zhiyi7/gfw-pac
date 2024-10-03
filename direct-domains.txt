@@ -109,7 +109,6 @@ idv.cdn-apple.com
 adcdownload.apple.com
 alpdownloadit.cdn-apple.com
 bricks.cdn-apple.com
-blob.core.windows.net
 self.events.data.microsoft.com
 mobile.events.data.microsoft.com
 browser.events.data.microsoft.com
