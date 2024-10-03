@@ -1,8 +1,15 @@
-name: GFW PAC Update
+name: Auto Generate PAC File
 
 on:
   schedule:
     - cron: '10 0 * * 4'
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'gfw.pac'
+      - '.gitignore'
+      - '.github/**'
   workflow_dispatch:
 
 jobs:
@@ -12,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download cn.txt
+      - name: Download the latest cn.txt
         run: curl -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/cn.txt -o cidrs-cn.txt
 
       - name: Run gfw-pac.py script
@@ -23,7 +30,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -a -m "自动更新 cidrs-cn.txt 和 gfw.pac"
+          git commit -a -m "自动生成 gfw.pac"
           git push
 
       - name: Trigger Auto-Release
