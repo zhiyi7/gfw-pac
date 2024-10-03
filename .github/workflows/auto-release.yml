@@ -23,7 +23,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Get commit count for today
+      - name: Generate Release Name
         id: commit_count
         env:
           GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
@@ -49,11 +49,7 @@ jobs:
         with:
           tag_name: "${{ env.RELEASE_NAME }}"
           name: "${{ env.RELEASE_NAME }}"
-          body: "Automatically generated release for pac file update"
+          body: "$(git log -1 --pretty=%B)"
           draft: false
           prerelease: false
           files: gfw.pac
-
-      - name: Verify Release
-        run: |
-          echo "Release created with name ${{ env.RELEASE_NAME }}"
