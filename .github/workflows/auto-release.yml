@@ -24,7 +24,7 @@ jobs:
       - name: Generate Release Name
         id: commit_count
         run: |
-          today=$(date +%Y%m%d)
+          today=$(TZ=Asia/Shanghai date +%Y%m%d)
           commit_count=$(TZ=Asia/Shanghai git log --date=local --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
           echo "COMMIT_COUNT=$commit_count" >> $GITHUB_ENV
           echo "RELEASE_NAME=v$(TZ='Asia/Shanghai' date +%Y%m%d).$commit_count" >> $GITHUB_ENV
