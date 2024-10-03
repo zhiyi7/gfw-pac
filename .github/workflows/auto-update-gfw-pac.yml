@@ -2,7 +2,7 @@ name: GFW PAC Update
 
 on:
   schedule:
-    - cron: '0 0 */7 * *'
+    - cron: '10 0 * * 4'
   workflow_dispatch:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download cn.txt
-        run: curl https://raw.githubusercontent.com/Loyalsoldier/geoip/refs/heads/release/text/cn.txt -o cidrs-cn.txt
+        run: curl -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/cn.txt -o cidrs-cn.txt
 
       - name: Run gfw-pac.py script
         run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
