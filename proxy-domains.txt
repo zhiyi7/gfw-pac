@@ -16,6 +16,7 @@ wikipedia.org
 godaddy.com
 cloudflare.com
 twitter.com
+x.com
 twimg.com
 docker.com
 facebook.com
