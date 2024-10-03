@@ -1,16 +1,20 @@
 name: Auto Generate Release
 
 on:
-  workflow_dispatch:
   push:
     paths:
-      - 'gfw.pac'  # 替换为你要监控的文件路径
+      - 'gfw.pac'
+  workflow_dispatch:
 
 jobs:
   generate-release:
     runs-on: ubuntu-latest
 
     steps:
+    
+    - env:
+        GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+
     - name: Checkout repository
       uses: actions/checkout@v3
 
@@ -42,7 +46,7 @@ jobs:
         body: "Automatically generated release for pac file update"
         draft: false
         prerelease: false
-        files: gfw.pac  # 替换为你要上传的文件路径
+        files: gfw.pac
 
     - name: Verify Release
       run: |

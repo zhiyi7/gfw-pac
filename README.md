@@ -2,7 +2,7 @@
 
 科学上网 PAC 文件以及生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理，支持IPv6。
 
-**此仓库每 14 天自动通过 GitHub Action 从 `Loyalsoldier/geoip` 获取国内地址段并更新 `gfw.pac` 文件**
+**此仓库每 7 天自动通过 GitHub Action 从 `Loyalsoldier/geoip` 获取国内地址段并更新 `gfw.pac` 文件**
 
 ## 特性
 * 开箱即用，直接可用的 `gfw.pac` 包含了常用的直连域名和代理域名以及国内IPv4/IPv6地址段
