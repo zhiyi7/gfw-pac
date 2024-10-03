@@ -32,6 +32,7 @@ jobs:
           commit_count=$(TZ=Asia/Shanghai git log --date=local --since="$today 00:00:00" --until="$today 23:59:59" --pretty=format: --name-only | grep -c '^gfw.pac$')
           echo "COMMIT_COUNT=$commit_count" >> $GITHUB_ENV
           echo "RELEASE_NAME=v$(TZ='Asia/Shanghai' date +%Y%m%d).$commit_count" >> $GITHUB_ENV
+          echo "COMMIT_MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
 
       - name: Create Tag
         id: create_tag
@@ -49,7 +50,7 @@ jobs:
         with:
           tag_name: "${{ env.RELEASE_NAME }}"
           name: "${{ env.RELEASE_NAME }}"
-          body: "$(git log -1 --pretty=%B)"
+          body: "${{ env.COMMIT_MESSAGE }}"
           draft: false
           prerelease: false
           files: gfw.pac
