@@ -69,8 +69,18 @@ douyinstatic.com
 douyinvod.com
 supercachenode.com
 bytedance.com
+bytedanceapi.com
 bytescm.com
 bytecdn.cn
+byteoc.com
+bytednsdoc.com
+bytetcc.com
+feishu.cn
+feishucdn.com
+toutiao.com
+toutiaoimg.com
+toutiaostatic.com
+yhgfb-cn-static.com
 cmbchina.com
 mi.com
 xiaomi.com
@@ -83,6 +93,8 @@ dianping.com
 quark.cn
 wps.cn
 wpscdn.cn
+xiaohongshu.com
+xhscdn.com
 push.apple.com
 setup.icloud.com
 appldnld.apple.com
