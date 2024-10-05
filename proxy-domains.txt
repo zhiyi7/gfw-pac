@@ -10,6 +10,7 @@ githubassets.com
 bing.com
 bing.cn
 bing.net
+bingapis.com
 live.com
 stackoverflow.com
 wikipedia.org
