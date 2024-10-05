@@ -27,3 +27,9 @@ segment.io
 unpkg.com
 jsdelivr.com
 tv.apple.com
+instagram.com
+cdninstagram.com
+reddit.com
+redd.it
+whatsapp.com
+whatsapp.net
