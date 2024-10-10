@@ -28,7 +28,7 @@ jobs:
       - name: Commit and push changes
         run: |
           last_commit_message=$(git log -1 --pretty=%B)
-          $GITHUB_EVENT_NAME == 'schedule' && commit_message="定期更新数据并生成 gfw.pac" || commit_message="自动生成 gfw.pac: $last_commit_message"
+          ${{ github.event_name }} == 'schedule' && commit_message="定期更新数据并生成 gfw.pac" || commit_message="自动生成 gfw.pac: $last_commit_message"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
