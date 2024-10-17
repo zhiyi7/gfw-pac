@@ -4,12 +4,13 @@ on:
   schedule:
     - cron: '10 0 * * 4'
   push:
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - 'gfw.pac'
-      - '.gitignore'
-      - '.github/**'
+    paths:
+      - 'gfw-pac.py'
+      - 'pac-template'
+      - 'local-tlds.txt'
+      - 'direct-domains.txt'
+      - 'proxy-domains.txt'
+      - 'cidrs-cn.txt'
   workflow_dispatch:
 
 jobs:
