@@ -130,3 +130,9 @@ ocsp.globalsign.com
 ocsp2.globalsign.com
 ocsp.digicert.cn
 ocsp.dcocsp.cn
+api.onedrive.com
+storage.live.com
+skyapi.live.net
+roaming.officeapps.live.com
+blob.core.windows.net
+default.exp-tas.com
