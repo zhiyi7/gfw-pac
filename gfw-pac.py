@@ -27,16 +27,11 @@ def parse_args():
 def convert_cidr(cidr):
     if '/' in cidr:
         network = ipaddress.ip_network(cidr.strip(), strict=False)
-        network_address = network.network_address
-        prefixlen = network.prefixlen
+        network_address = int(network.network_address) >> (network.max_prefixlen - network.prefixlen)
     else:
         network = ipaddress.ip_address(cidr.strip())
         network_address = network
-        prefixlen = network.max_prefixlen
-    if network.version == 4:
-        return hex(int(network_address))[2:] + '/' + str(prefixlen)
-    else:
-        return network.compressed
+    return hex(int(network_address))[2:]
 
 def generate_cnip_cidrs():
     """ 从文件中读取CIDR地址 """

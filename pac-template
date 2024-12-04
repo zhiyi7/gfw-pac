@@ -10,35 +10,45 @@ var localTlds = __LOCAL_TLDS__;
 
 var cidrs = __CIDRS__;
 
-var hasOwnProperty = Object.hasOwnProperty;
-
 function isIpAddress(ip) {
     return /^\d{1,3}(\.\d{1,3}){3}$/.test(ip) || /^([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4}$/.test(ip);
 }
 
 function RadixTree() {
-    this.root = {};
+    this.root = new Map();
 }
 
 RadixTree.prototype.insert = function(string) {
     var node = this.root;
     for (var i = 0; i < string.length; i++) {
         var char = string[i];
-        if (!node[char]) {
-            node[char] = {};
+        if (!node.has(char)) {
+            node.set(char, new Map());
         }
-        node = node[char];
+        node = node.get(char);
     }
 };
 
-RadixTree.prototype.to_list = function() {
-    return this.root;
-};
+RadixTree.prototype.search = function(string) {
+    var currentNode = this.root;
+    var isLastNode = false;
+    for (var i=0; i < string.length; i++) {
+        var char = string[i];
+        if (currentNode.has(char)) {
+            currentNode = currentNode.get(char);
+            isLastNode = currentNode.size === 0;
+        } else {
+            break;
+        }
+    }
+    return isLastNode;
+}
 
 function ipToBinary(ip) {
+    var bin = ''
     // Check if it's IPv4
     if (/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) {
-        return ip.split('.').map(function(num) {
+        bin = ip.split('.').map(function(num) {
             return ("00000000" + parseInt(num, 10).toString(2)).slice(-8);
         }).join('');
     } else if (/^([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4}$/.test(ip)) {
@@ -54,25 +64,11 @@ function ipToBinary(ip) {
         var fullAddress = left.concat(Array(zeroGroups + 1).join('0').split('')).concat(right);
         
         // Convert each group to binary and pad to 16 bits
-        return fullAddress.map(function(group) {
+        bin = fullAddress.map(function(group) {
             return ("0000000000000000" + parseInt(group || '0', 16).toString(2)).slice(-16);
         }).join('');
     }
-}
-
-function searchRadixTree(bits) {
-    var currentNode = radixTree;
-    var isLastNode = false;
-    for (var i=0; i<bits.length; i++) {
-        var char = bits[i];
-        if (currentNode[char]) {
-            currentNode = currentNode[char];
-            isLastNode = Object.keys(currentNode).length === 0;
-        } else {
-            break;
-        }
-    }
-    return isLastNode;
+    return bin.replace(/^0+/, '');
 }
   
 function isInDirectDomain(host) {
@@ -142,7 +138,7 @@ function FindProxyForURL(url, host) {
     } else if (isPrivateIp(ip)) {
         debug('域名解析后命中私有 IP 地址', host, ip);
         return direct;
-    } else if (searchRadixTree(ipToBinary(ip))) {
+    } else if (radixTree.search(ipToBinary(ip))) {
         debug('匹配到直连IP', host, ip);
         return direct;
     }
@@ -152,7 +148,7 @@ function FindProxyForURL(url, host) {
 }
 
 var allowAlert = true
-function debug(msg, host, ip) {
+function debug(msg, host='', ip='') {
     if (!allowAlert) {
         return
     }
@@ -166,19 +162,11 @@ function debug(msg, host, ip) {
 var radixTree = new RadixTree();
 
 (function () {
-    var startTime = new Date().getMilliseconds();
-    debug('开始生成 Radix Tree', 'PAC文件载入开始', startTime.toString());
+    debug('开始生成 Radix Tree', 'PAC文件载入开始');
     for (let i=0; i<cidrs.length; i++) {
-        var cidr = cidrs[i];
-        var [ip, prefixLen] = cidr.split('/');
-        if (!cidr.includes(':')) {
-            var ip = ip.match(/.{1,2}/g).map(function(byte) {
-                return parseInt(byte, 16);
-            }).join('.');
-        }
-        var bits = ipToBinary(ip).slice(0, prefixLen);
+        var prefix = cidrs[i];
+        var bits = (parseInt(prefix, 16)).toString(2);
         radixTree.insert(bits);
     }
-    radixTree = radixTree.to_list();
     debug('Radix Tree 已生成', 'PAC文件载入完毕', cidrs.length.toString()+'个CIDR条目');
 })();

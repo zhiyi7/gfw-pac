@@ -11,6 +11,7 @@ on:
       - 'direct-domains.txt'
       - 'proxy-domains.txt'
       - 'cidrs-cn.txt'
+      - '!gfw.pac'
   workflow_dispatch:
 
 jobs:
