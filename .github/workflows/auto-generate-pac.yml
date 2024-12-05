@@ -11,7 +11,6 @@ on:
       - 'direct-domains.txt'
       - 'proxy-domains.txt'
       - 'cidrs-cn.txt'
-      - '!gfw.pac'
   workflow_dispatch:
 
 jobs:
@@ -21,13 +20,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check if gfw.pac is in the commit
+        id: check-file
+        run: |
+          if git diff --name-only HEAD^ HEAD | grep -q 'gfw\.pac'; then
+            echo "file-exists=true" >> $GITHUB_ENV
+          else
+            echo "file-exists=false" >> $GITHUB_ENV
+          fi
+
       - name: Download the latest cn.txt
+        if: env.file-exists == 'false'
         run: curl -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/cn.txt -o cidrs-cn.txt
 
       - name: Run gfw-pac.py script
+        if: env.file-exists == 'false'
         run: ./gfw-pac.py -f gfw.pac -p "PROXY 127.0.0.1:3128" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
 
       - name: Commit and push changes
+        if: env.file-exists == 'false'
         run: |
           last_commit_message=$(git log -1 --pretty=%B)
           commit_message=$([[ "${{ github.event_name }}" == "schedule" ]] && echo "定期更新数据并生成 gfw.pac" || echo "自动生成 gfw.pac: $last_commit_message")
@@ -38,6 +49,7 @@ jobs:
           git push
 
       - name: Trigger Auto-Release
+        if: env.file-exists == 'false'
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: Auto Generate Release
