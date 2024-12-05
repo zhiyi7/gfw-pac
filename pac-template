@@ -163,8 +163,14 @@ var radixTree = new RadixTree();
 
 (function () {
     debug('开始生成 Radix Tree', 'PAC文件载入开始');
+    lastFullPrefix = ''
     for (let i=0; i<cidrs.length; i++) {
         var prefix = cidrs[i];
+        if (prefix.substring(0, 1) !== '~') {
+            lastFullPrefix = prefix
+        } else {
+            prefix = lastFullPrefix.substring(0, lastFullPrefix.length-prefix.length+1) + prefix.substring(1)
+        }
         var bits = (parseInt(prefix, 16)).toString(2);
         radixTree.insert(bits);
     }

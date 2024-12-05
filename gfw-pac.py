@@ -33,6 +33,13 @@ def convert_cidr(cidr):
         network_address = network
     return hex(int(network_address))[2:]
 
+def longest_common_prefix(str1, str2):
+    min_length = min(len(str1), len(str2))
+    for i in range(min_length):
+        if str1[i] != str2[i]:
+            return str1[:i]
+    return str1[:min_length]
+
 def generate_cnip_cidrs():
     """ 从文件中读取CIDR地址 """
     args = parse_args()
@@ -42,6 +49,22 @@ def generate_cnip_cidrs():
         for cidr in cidrs:
             converted_cidrs.append(convert_cidr(cidr))
 
+    converted_cidrs.sort(key=lambda x: (len(x), x), reverse=False)
+    converted_cidrs_clone = converted_cidrs[:]
+    
+    lastFullCidr = ''
+    for i in range(len(converted_cidrs)):
+        prevCidr = converted_cidrs_clone[i-1] if i > 0 else ''
+        currentCidr = converted_cidrs[i]
+        if len(prevCidr) != len(currentCidr):
+            lastFullCidr = currentCidr
+            continue
+        prefix = longest_common_prefix(lastFullCidr, currentCidr)
+        if len(prefix) < len(lastFullCidr)//1.2:
+            lastFullCidr = currentCidr
+            continue
+        converted_cidrs[i] = '~' + currentCidr[len(prefix):]
+    
     cidr_list = ','.join(converted_cidrs)
     return f"'{cidr_list}'.split(',')"
 
