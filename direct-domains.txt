@@ -132,6 +132,7 @@ ocsp.digicert.cn
 ocsp.dcocsp.cn
 api.onedrive.com
 storage.live.com
+gr.global.aa-rt.sharepoint.com
 skyapi.live.net
 roaming.officeapps.live.com
 blob.core.windows.net
