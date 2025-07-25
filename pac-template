@@ -70,24 +70,47 @@ function ipToBinary(ip) {
     }
     return bin.replace(/^0+/, '');
 }
-  
-function isInDirectDomain(host) {
-    for (var i = 0; i < directDomains.length; i++) {
-        var domain = directDomains[i];
-        if (host === domain || host.endsWith('.' + domain)) {
-            return true;
+
+// Set for exact matching of domains
+var directSet = new Set(directDomains);
+var proxySet = new Set(domainsUsingProxy);
+
+// Generate groups of domains by length
+function generateDomainsGroup(domainList) {
+    debug('生成域名组');
+    const domainsGroup = {};
+
+    for (let domain of domainList) {
+        domain = '.' + domain;
+        const key = domain.length
+
+        if (!domainsGroup[key]) {
+            domainsGroup[key] = new Set();
         }
+
+        domainsGroup[key].add(domain);
     }
-    return false;
+
+    return domainsGroup;
 }
 
-function isInProxyDomain(host) {
-    for (var i = 0; i < domainsUsingProxy.length; i++) {
-        var domain = domainsUsingProxy[i];
-        if (host === domain || host.endsWith('.' + domain)) {
+var directGroup = generateDomainsGroup(directDomains);
+var proxyGroup = generateDomainsGroup(domainsUsingProxy);
+
+// Check if host matches exactly or by suffix in grouped domains
+function isInDomains(host, domainSet, domainsGroup) {
+    if (domainSet.has(host)) {
+        return true;
+    }
+
+    for (const key in domainsGroup) {
+        const len = parseInt(key, 10);
+        const suffix = host.slice(-len)
+        if (domainsGroup[key].has(suffix)) {
             return true;
         }
     }
+
     return false;
 }
 
@@ -116,10 +139,10 @@ function isPrivateIp(ip) {
 }
 
 function FindProxyForURL(url, host) {
-    if (isInDirectDomain(host)) {
+    if (isInDomains(host, directSet, directGroup)) {
         debug('命中直连域名', host, 'N/A');
         return direct;
-    } else if (isInProxyDomain(host)) {
+    } else if (isInDomains(host, proxySet, proxyGroup)) {
         debug('命中代理域名', host, 'N/A');
         return proxy;
     } else if (isPlainHostName(host) || host === 'localhost' || isLocalTestDomain(host)) {
