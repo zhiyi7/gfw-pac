@@ -68,7 +68,8 @@ function ipToBinary(ip) {
             return ("0000000000000000" + parseInt(group || '0', 16).toString(2)).slice(-16);
         }).join('');
     }
-    return bin.replace(/^0+/, '');
+    // 不要删除前导零！保持完整的二进制字符串以便与CIDR前缀匹配
+    return bin;
 }
   
 function isInDirectDomain(host) {
@@ -163,16 +164,20 @@ var radixTree = new RadixTree();
 
 (function () {
     debug('开始生成 Radix Tree', 'PAC文件载入开始');
-    lastFullPrefix = ''
-    for (let i=0; i<cidrs.length; i++) {
+    var lastFullPrefix = '';
+    for (var i = 0; i < cidrs.length; i++) {
         var prefix = cidrs[i];
+        // 解压缩：如果以~开头，则从lastFullPrefix中还原
         if (prefix.substring(0, 1) !== '~') {
-            lastFullPrefix = prefix
+            lastFullPrefix = prefix;
         } else {
-            prefix = lastFullPrefix.substring(0, lastFullPrefix.length-prefix.length+1) + prefix.substring(1)
+            // 计算公共前缀长度
+            var suffix = prefix.substring(1);
+            var prefixLen = lastFullPrefix.length - suffix.length;
+            prefix = lastFullPrefix.substring(0, prefixLen) + suffix;
         }
-        var bits = (parseInt(prefix, 16)).toString(2);
-        radixTree.insert(bits);
+        // 直接使用二进制字符串插入（无需转换）
+        radixTree.insert(prefix);
     }
-    debug('Radix Tree 已生成', 'PAC文件载入完毕', cidrs.length.toString()+'个CIDR条目');
+    debug('Radix Tree 已生成', 'PAC文件载入完毕', cidrs.length.toString() + '个CIDR条目');
 })();

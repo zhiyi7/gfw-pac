@@ -25,13 +25,27 @@ def parse_args():
     return parser.parse_args()
 
 def convert_cidr(cidr):
+    """将CIDR转换为二进制字符串（根据掩码长度）"""
     if '/' in cidr:
         network = ipaddress.ip_network(cidr.strip(), strict=False)
-        network_address = int(network.network_address) >> (network.max_prefixlen - network.prefixlen)
+        # 获取网络地址和前缀长度
+        network_address = int(network.network_address)
+        prefix_len = network.prefixlen
+        # 转换为二进制字符串，根据前缀长度截取
+        if network.version == 4:
+            # IPv4: 最多32位
+            binary = bin(network_address)[2:].zfill(32)[:prefix_len]
+        else:
+            # IPv6: 最多128位
+            binary = bin(network_address)[2:].zfill(128)[:prefix_len]
     else:
-        network = ipaddress.ip_address(cidr.strip())
-        network_address = network
-    return hex(int(network_address))[2:]
+        # 单个IP地址，使用完整长度
+        ip = ipaddress.ip_address(cidr.strip())
+        if ip.version == 4:
+            binary = bin(int(ip))[2:].zfill(32)
+        else:
+            binary = bin(int(ip))[2:].zfill(128)
+    return binary
 
 def longest_common_prefix(str1, str2):
     min_length = min(len(str1), len(str2))
@@ -47,8 +61,11 @@ def generate_cnip_cidrs():
         cidrs = file.read().splitlines()
         converted_cidrs = []
         for cidr in cidrs:
-            converted_cidrs.append(convert_cidr(cidr))
+            binary = convert_cidr(cidr)
+            if binary:  # 忽略空字符串
+                converted_cidrs.append(binary)
 
+    # 按长度和字典序排序
     converted_cidrs.sort(key=lambda x: (len(x), x), reverse=False)
     converted_cidrs_clone = converted_cidrs[:]
     
@@ -60,9 +77,11 @@ def generate_cnip_cidrs():
             lastFullCidr = currentCidr
             continue
         prefix = longest_common_prefix(lastFullCidr, currentCidr)
-        if len(prefix) < len(lastFullCidr)//1.2:
+        # 只有当前缀足够长时才压缩（至少80%相同）
+        if len(prefix) < len(lastFullCidr) * 0.8:
             lastFullCidr = currentCidr
             continue
+        # 使用~前缀表示压缩的部分
         converted_cidrs[i] = '~' + currentCidr[len(prefix):]
     
     cidr_list = ','.join(converted_cidrs)
