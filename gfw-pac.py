@@ -12,7 +12,7 @@ def parse_args():
                         help='输出的PAC文件名', metavar='PAC')
     parser.add_argument('-p', '--proxy', dest='proxy', required=True,
                         help='代理服务器, '
-                             '例如, "PROXY 127.0.0.1:3128;"',
+                             '例如 "PROXY 127.0.0.1:3128" 或 "SOCKS5 127.0.0.1:7080"',
                         metavar='PROXY')
     parser.add_argument('--proxy-domains', dest='user_rule',
                         help='直接通过代理域名的文件，每行一个')
@@ -92,8 +92,9 @@ def generate_pac_fast(domains, proxy, direct_domains, cidrs, local_tlds):
     with open('./pac-template', 'r') as f:
         proxy_content = f.read()
     domains_list = []
-    for domain in domains:
-        domains_list.append(domain)
+    if domains:
+        for domain in domains:
+            domains_list.append(domain)
     proxy_content = proxy_content.replace('__PROXY__', json.dumps(str(proxy)))
     proxy_content = proxy_content.replace(
         '__DOMAINS__',
@@ -147,7 +148,7 @@ def main():
                 direct_rule = f.read()
         else:
             # Yeah, it's an URL, try to download it
-            print('Downloading user rules file from %s' % args.user_rule)
+            print('Downloading direct domains file from %s' % args.direct_rule)
             direct_rule = urllib.request.urlopen(args.direct_rule, timeout=10).read().decode('utf-8')
         direct_rule = direct_rule.splitlines(False)
     else:
@@ -161,7 +162,7 @@ def main():
                 localtld_rule = f.read()
         else:
             # Yeah, it's an URL, try to download it
-            print('Downloading local tlds rules file from %s' % args.user_rule)
+            print('Downloading local tlds file from %s' % args.localtld_rule)
             localtld_rule = urllib.request.urlopen(args.localtld_rule, timeout=10).read().decode('utf-8')
         localtld_rule = localtld_rule.splitlines(False)
     else:
