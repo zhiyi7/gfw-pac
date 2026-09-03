@@ -3,6 +3,7 @@
 
 import json
 import urllib.request, urllib.error, urllib.parse
+import requests
 from argparse import ArgumentParser
 import ipaddress
 
@@ -134,9 +135,11 @@ def main():
             with open(args.user_rule, 'r') as f:
                 user_rule = f.read()
         else:
+            if userrule_parts.scheme not in ('http', 'https'):
+                raise ValueError('Unsupported URL scheme: %s' % userrule_parts.scheme)
             # Yeah, it's an URL, try to download it
             print('Downloading user rules file from %s' % args.user_rule)
-            user_rule = urllib.request.urlopen(args.user_rule, timeout=10).read().decode('utf-8')
+            user_rule = requests.get(args.user_rule, timeout=10).text
         user_rule = user_rule.splitlines(False)
 
     if args.direct_rule:
@@ -146,9 +149,11 @@ def main():
             with open(args.direct_rule, 'r') as f:
                 direct_rule = f.read()
         else:
+            if directrule_parts.scheme not in ('http', 'https'):
+                raise ValueError('Unsupported URL scheme: %s' % directrule_parts.scheme)
             # Yeah, it's an URL, try to download it
             print('Downloading user rules file from %s' % args.user_rule)
-            direct_rule = urllib.request.urlopen(args.direct_rule, timeout=10).read().decode('utf-8')
+            direct_rule = requests.get(args.direct_rule, timeout=10).text
         direct_rule = direct_rule.splitlines(False)
     else:
         direct_rule = []
@@ -160,9 +165,11 @@ def main():
             with open(args.localtld_rule, 'r') as f:
                 localtld_rule = f.read()
         else:
+            if tldrule_parts.scheme not in ('http', 'https'):
+                raise ValueError('Unsupported URL scheme: %s' % tldrule_parts.scheme)
             # Yeah, it's an URL, try to download it
             print('Downloading local tlds rules file from %s' % args.user_rule)
-            localtld_rule = urllib.request.urlopen(args.localtld_rule, timeout=10).read().decode('utf-8')
+            localtld_rule = requests.get(args.localtld_rule, timeout=10).text
         localtld_rule = localtld_rule.splitlines(False)
     else:
         localtld_rule = []
